@@ -17,7 +17,7 @@
     "electron:package:mac": "npm run build:desktop && electron-builder --mac",
     "electron:package:linux": "npm run build:desktop && electron-builder --linux",
     "start:test": "next start -H 127.0.0.1 -p 3005",
-    "lint": "next lint",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "vitest run",
@@ -28,12 +28,27 @@
   },
   "devDependencies": {
     "@monaco-editor/react": "^4.7.0",
+    "@playwright/test": "^1.58.2",
     "@sparticuz/chromium": "^143.0.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/dompurify": "^3.0.5",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitest/coverage-v8": "^4.1.2",
     "breakdance": "^3.0.1",
     "clsx": "^2.1.1",
+    "concurrently": "^9.2.1",
     "dompurify": "^3.4.17",
+    "electron": "^39.1.2",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.3",
     "highlight.js": "^11.11.1",
+    "jsdom": "^28.1.0",
     "katex": "^0.16.38",
     "lucide-react": "^0.562.0",
     "markdown-it": "^14.1.0",
@@ -49,34 +64,19 @@
     "markdown-it-toc": "^1.1.0",
     "monaco-emacs": "^0.3.0",
     "monaco-vim": "^0.4.4",
-    "next": "14.2.35",
-    "puppeteer-core": "^24.39.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "tailwind-merge": "^3.4.0",
-    "turndown": "^7.2.2",
-    "zustand": "^5.0.10",
-    "@playwright/test": "^1.58.2",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@testing-library/user-event": "^14.6.1",
-    "@types/markdown-it": "^14.1.2",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@vitest/coverage-v8": "^4.1.2",
-    "concurrently": "^9.2.1",
-    "electron": "^39.1.2",
-    "electron-builder": "^26.0.12",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35",
-    "jsdom": "^28.1.0",
+    "next": "16.4.3",
     "postcss": "^8",
+    "puppeteer-core": "^24.39.0",
+    "react": "^19.2.9",
+    "react-dom": "^19.2.9",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss": "^3.4.1",
+    "turndown": "^7.2.2",
     "typescript": "^5",
-    "wait-on": "^8.0.3",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.0.18"
+    "vitest": "^4.0.18",
+    "wait-on": "^8.0.3",
+    "zustand": "^5.0.10"
   },
   "main": "electron/main.cjs",
   "build": {
@@ -92,12 +92,16 @@
       {
         "from": ".next/standalone",
         "to": "resources/next-server",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       },
       {
         "from": ".next/standalone/node_modules",
         "to": "resources/next-server/node_modules",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       }
     ],
     "directories": {
@@ -107,17 +111,29 @@
       "target": "nsis"
     },
     "mac": {
-      "target": ["dmg", "zip"]
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
     "linux": {
-      "target": ["AppImage", "deb"],
+      "target": [
+        "AppImage",
+        "deb"
+      ],
       "category": "Office",
       "icon": "public/icon-512x512.png",
       "maintainer": "Dillinger Team <support@dillinger.io>"
     },
     "fileAssociations": [
       {
-        "ext": ["md", "markdown", "txt", "html", "htm"],
+        "ext": [
+          "md",
+          "markdown",
+          "txt",
+          "html",
+          "htm"
+        ],
         "name": "Markdown Document",
         "description": "Markdown and text document",
         "role": "Editor"

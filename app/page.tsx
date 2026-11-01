@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import nextDynamic from "next/dynamic";
-import { EditorSkeleton } from "@/components/ui/Skeleton";
+import { EditorLoader } from "@/components/editor/EditorLoader";
 import { WebOnly } from "@/components/ui/WebOnly";
 
 export const metadata: Metadata = {
@@ -23,14 +22,6 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = "force-dynamic";
-
-const Editor = nextDynamic(
-  () => import("@/components/editor/EditorContainer").then((mod) => mod.EditorContainer),
-  {
-    ssr: false,
-    loading: () => <EditorSkeleton />,
-  }
-);
 
 const HOMEPAGE_FEATURES = [
   {
@@ -235,7 +226,7 @@ function HomepageSeoContent() {
 export default function Page() {
   return (
     <>
-      <Editor />
+      <EditorLoader />
       <WebOnly>
         <HomepageSeoContent />
       </WebOnly>
