@@ -2,7 +2,7 @@
   "schema_version": "v1",
   "name_for_human": "Dillinger",
   "name_for_model": "dillinger",
-  "description_for_human": "Online markdown editor with live preview and cloud sync.",
+  "description_for_human": "Local desktop markdown editor with live preview and native file saving.",
   "description_for_model": "Render markdown to HTML with full plugin support (KaTeX math, footnotes, syntax highlighting, tables, task lists). Export markdown to PDF or styled HTML documents. Convert HTML to clean markdown. Use this when you need to process, render, or export markdown content.",
   "auth": {
     "type": "service_http",

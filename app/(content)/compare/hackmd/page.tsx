@@ -15,9 +15,7 @@ const COMPARISON = [
   { feature: "Editor engine", dillinger: "Monaco (VS Code)", competitor: "CodeMirror" },
   { feature: "Live preview", dillinger: "Side-by-side", competitor: "Split or unified" },
   { feature: "GitHub sync", dillinger: "Yes", competitor: "Yes (paid)" },
-  { feature: "Dropbox sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Google Drive sync", dillinger: "Yes", competitor: "No" },
-  { feature: "OneDrive sync", dillinger: "Yes", competitor: "No" },
+  { feature: "Native file saving", dillinger: "Yes", competitor: "No" },
   { feature: "PDF export", dillinger: "Yes", competitor: "Yes (paid)" },
   { feature: "Vim keybindings", dillinger: "Yes", competitor: "Yes" },
   { feature: "Zen / focus mode", dillinger: "Yes", competitor: "No" },
@@ -37,7 +35,7 @@ export default function HackMDCompare() {
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
         HackMD is built for teams and real-time collaboration. Dillinger is
         built for individuals who want zero-friction markdown editing with
-        cloud sync and no account required.
+        local file saving and no account required.
       </p>
 
       <div className="overflow-x-auto mb-12">

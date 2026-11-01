@@ -1,8 +1,6 @@
 import { replaceExtension, sanitizeDownloadFilename } from "@/lib/document";
 
 const STYLED_EXPORT_CSS = `
-  @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css");
-
   body {
     font-family: Georgia, Cambria, serif;
     font-size: 14px;

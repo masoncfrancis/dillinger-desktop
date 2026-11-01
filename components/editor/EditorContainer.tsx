@@ -15,7 +15,7 @@ import { EditorSkeleton } from "@/components/ui/Skeleton";
 import { useImageUpload } from "@/hooks/useImageUpload";
 import { importDocumentFile } from "@/lib/import";
 
-// Dynamic import Sidebar to prevent SSR issues with GitHub/Dropbox hooks
+// Keep the sidebar client-only because it owns interactive editor state.
 const Sidebar = dynamic(
   () => import("@/components/sidebar/Sidebar").then((mod) => mod.Sidebar),
   { ssr: false }

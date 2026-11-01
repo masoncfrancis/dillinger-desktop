@@ -69,6 +69,7 @@ describe("Toast", () => {
 
     act(() => {
       vi.advanceTimersByTime(2000);
+      vi.advanceTimersByTime(150);
     });
 
     expect(screen.queryByText("Temporary")).not.toBeInTheDocument();
@@ -89,6 +90,7 @@ describe("Toast", () => {
 
     act(() => {
       vi.advanceTimersByTime(1);
+      vi.advanceTimersByTime(150);
     });
     expect(screen.queryByText("Default timing")).not.toBeInTheDocument();
   });
@@ -117,6 +119,7 @@ describe("Toast", () => {
 
     await act(async () => {
       screen.getByRole("button", { name: "Dismiss notification" }).click();
+      vi.advanceTimersByTime(150);
     });
     expect(screen.queryByText("Dismissible")).not.toBeInTheDocument();
   });

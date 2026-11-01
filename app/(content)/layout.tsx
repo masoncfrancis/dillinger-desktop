@@ -24,9 +24,6 @@ export default function ContentLayout({
           <Link href="/ai" className="hover:text-plum transition-colors">
             AI
           </Link>
-          <Link href="/integrations" className="hover:text-plum transition-colors">
-            Integrations
-          </Link>
           <Link href="/guide" className="hover:text-plum transition-colors">
             Guide
           </Link>

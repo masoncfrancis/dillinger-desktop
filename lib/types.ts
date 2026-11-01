@@ -5,37 +5,24 @@ export interface Document {
   createdAt: string;
   filePath?: string;
   fileModifiedAt?: number;
-  github?: {
-    sha: string;
-    path: string;
-    repo: string;
-    owner: string;
-    branch: string;
-  };
 }
 
 export interface UserSettings {
-  enableAutoSave: boolean;
-  enableFileAutoSave: boolean;
   enableWordsCount: boolean;
   enableCharactersCount: boolean;
   enableScrollSync: boolean;
   tabSize: number;
   keybindings: "default" | "vim" | "emacs";
   enableNightMode: boolean;
-  enableGitHubComment: boolean;
 }
 
 export const DEFAULT_SETTINGS: UserSettings = {
-  enableAutoSave: true,
-  enableFileAutoSave: false,
   enableWordsCount: true,
   enableCharactersCount: true,
   enableScrollSync: true,
   tabSize: 4,
   keybindings: "default",
   enableNightMode: false,
-  enableGitHubComment: true,
 };
 
 export const DEFAULT_DOCUMENT_BODY = `# Welcome to Dillinger
@@ -52,7 +39,7 @@ Markdown makes it easy to format text. You can write in **bold**, *italic*, or ~
 
 Unordered lists use dashes, asterisks, or plus signs:
 
-- Import files from GitHub, Dropbox, or Google Drive
+- Open local Markdown and HTML files
 - Export to Markdown, HTML, or PDF
 - Drag and drop files directly into the editor
 
@@ -60,15 +47,10 @@ Ordered lists are numbered automatically:
 
 1. Write your markdown
 2. Preview the rendered output
-3. Export or save to the cloud
+3. Save changes directly to disk
 
 Nested lists work too:
 
-- Cloud integrations
-  - GitHub repositories
-  - Dropbox folders
-  - Google Drive files
-  - OneDrive and Bitbucket
 - Local features
   - Auto-save to browser storage
   - Image paste from clipboard
@@ -77,7 +59,7 @@ Nested lists work too:
 
 - [x] Set up the editor
 - [x] Write some markdown
-- [ ] Connect a cloud service
+- [ ] Save the finished document
 - [ ] Export the finished document
 
 ## Links and Images
@@ -134,8 +116,8 @@ Tables support alignment:
 |:--------|:------:|------:|
 | Markdown editing | Active | Monaco-powered |
 | Live preview | Active | Scroll-synced |
-| Cloud sync | Available | 5 providers |
-| PDF export | Available | Server-rendered |
+| Local file saving | Available | Native desktop dialogs |
+| PDF export | Available | Native desktop export |
 
 ## Footnotes
 

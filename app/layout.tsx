@@ -10,16 +10,16 @@ const sourceSans = Source_Sans_3({
 
 export const metadata: Metadata = {
   title: {
-    default: "Markdown Editor — Online, Free, with Live Preview | Dillinger",
+    default: "Dillinger — Local Markdown Editor",
     template: "%s | Dillinger",
   },
   description:
-    "Free online Markdown editor with live preview. Write, format, and export Markdown to HTML or PDF — sync to GitHub, Dropbox & Google Drive. No signup.",
+    "A focused desktop Markdown editor with live preview, native file saving, and local exports.",
   metadataBase: new URL("https://dillinger.io"),
   openGraph: {
     title: "Dillinger - Online Markdown Editor",
     description:
-      "Free markdown editor with live preview, cloud sync to GitHub, Dropbox & Google Drive. The preferred editor for AI and LLM workflows.",
+      "A focused local Markdown editor with live preview and native file saving.",
     url: "https://dillinger.io",
     siteName: "Dillinger",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dillinger - Online Markdown Editor",
     description:
-      "Free markdown editor with live preview and cloud sync. The preferred editor for AI workflows.",
+      "Local Markdown editor with live preview and native file saving.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -78,9 +78,9 @@ export default function RootLayout({
               name: "Dillinger",
               url: "https://dillinger.io",
               description:
-                "Free online markdown editor with live preview, cloud sync, and AI-ready formatting.",
+                "Focused desktop markdown editor with live preview and local file saving.",
               applicationCategory: "DeveloperApplication",
-              operatingSystem: "Web",
+               operatingSystem: "Windows, macOS, Linux",
               browserRequirements: "Requires JavaScript",
               offers: {
                 "@type": "Offer",
@@ -89,9 +89,8 @@ export default function RootLayout({
               },
               featureList: [
                 "Live markdown preview",
-                "GitHub integration",
-                "Dropbox sync",
-                "Google Drive sync",
+                "Native file open and save",
+                "Local auto-save",
                 "PDF export",
                 "Vim and Emacs keybindings",
                 "Zen mode",

@@ -17,15 +17,12 @@ export function MonacoEditor() {
   const currentDocument = useStore((state) => state.currentDocument);
   const isDirty = useStore((state) => state.isDirty);
   const enableNightMode = useStore((state) => state.settings.enableNightMode);
-  const enableAutoSave = useStore((state) => state.settings.enableAutoSave);
-  const enableFileAutoSave = useStore((state) => state.settings.enableFileAutoSave);
   const tabSize = useStore((state) => state.settings.tabSize);
   const keybindings = useStore((state) => state.settings.keybindings);
   const enableScrollSync = useStore((state) => state.settings.enableScrollSync);
   const enableWordsCount = useStore((state) => state.settings.enableWordsCount);
   const enableCharactersCount = useStore((state) => state.settings.enableCharactersCount);
   const updateDocumentBody = useStore((state) => state.updateDocumentBody);
-  const persist = useStore((state) => state.persist);
   const setEditorScrollPercent = useStore((state) => state.setEditorScrollPercent);
   const setEditorTopLine = useStore((state) => state.setEditorTopLine);
   const setEditorInstance = useStore((state) => state.setEditorInstance);
@@ -41,8 +38,6 @@ export function MonacoEditor() {
         ? "Emacs"
         : "Default";
 
-  // Debounced persist for auto-save
-  const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const fileAutoSaveRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [fileSaveStatus, setFileSaveStatus] = useState<FileSaveStatus>("idle");
 
@@ -91,7 +86,7 @@ export function MonacoEditor() {
 
   useEffect(() => {
     setFileSaveStatus("idle");
-  }, [currentDocument?.id, currentDocument?.filePath, enableFileAutoSave]);
+  }, [currentDocument?.id, currentDocument?.filePath]);
 
   useEffect(() => {
     return () => {
@@ -192,7 +187,7 @@ export function MonacoEditor() {
       fileAutoSaveRef.current = null;
     }
 
-    if (!desktop || !enableFileAutoSave || !currentDocument?.filePath || !isDirty) {
+    if (!desktop || !currentDocument?.filePath || !isDirty) {
       return;
     }
 
@@ -234,25 +229,15 @@ export function MonacoEditor() {
         fileAutoSaveRef.current = null;
       }
     };
-  }, [currentDocument, desktop, enableFileAutoSave, isDirty, markCurrentDocumentSaved, setCurrentDocumentFileModifiedAt]);
+  }, [currentDocument, desktop, isDirty, markCurrentDocumentSaved, setCurrentDocumentFileModifiedAt]);
 
   const handleChange: OnChange = useCallback(
     (value: string | undefined) => {
       if (value === undefined) return;
 
       updateDocumentBody(value);
-
-      // Debounced auto-save
-      if (enableAutoSave) {
-        if (debounceRef.current) {
-          clearTimeout(debounceRef.current);
-        }
-        debounceRef.current = setTimeout(() => {
-          persist();
-        }, 2000);
-      }
     },
-    [updateDocumentBody, persist, enableAutoSave]
+    [updateDocumentBody]
   );
 
   const editorOptions = useMemo(
@@ -319,7 +304,7 @@ export function MonacoEditor() {
         </div>
         <div className="flex items-center gap-3">
           <span data-testid="keybinding-mode">{keybindingLabel}</span>
-          {desktop && enableFileAutoSave && currentDocument.filePath && (
+          {desktop && currentDocument.filePath && (
             <span aria-live="polite" data-testid="file-save-status">
               {fileSaveStatus === "saving" && "Saving…"}
               {fileSaveStatus === "saved" && "Saved to file"}

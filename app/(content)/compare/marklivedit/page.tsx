@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Dillinger vs MarkLiveEdit",
   description:
-    "Compare Dillinger and MarkLiveEdit: features, exports, cloud sync, and editor experience. See how the long-trusted Dillinger compares to the newer alternative.",
+    "Compare Dillinger and MarkLiveEdit across local files, exports, and editor experience.",
   alternates: { canonical: "https://dillinger.io/compare/marklivedit" },
 };
 
@@ -15,12 +15,9 @@ const COMPARISON = [
   { feature: "Editor engine", dillinger: "Monaco (VS Code)", competitor: "Plain editor" },
   { feature: "Live preview", dillinger: "Side-by-side", competitor: "Side-by-side" },
   { feature: "Multiple documents", dillinger: "Yes", competitor: "No" },
-  { feature: "Document persistence", dillinger: "Yes (localStorage)", competitor: "No" },
+  { feature: "Document persistence", dillinger: "Yes (local files)", competitor: "No" },
   { feature: "GitHub sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Dropbox sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Google Drive sync", dillinger: "Yes", competitor: "No" },
-  { feature: "OneDrive sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Bitbucket sync", dillinger: "Yes", competitor: "No" },
+  { feature: "Native file saving", dillinger: "Yes", competitor: "No" },
   { feature: "PDF export", dillinger: "Yes", competitor: "Yes" },
   { feature: "HTML export", dillinger: "Yes", competitor: "No" },
   { feature: "DOCX / Word export", dillinger: "No", competitor: "Yes" },
@@ -42,7 +39,7 @@ export default function MarkLiveEditCompare() {
         MarkLiveEdit is a newer, lightweight web markdown editor with PDF and
         Word export and built-in support for LaTeX and diagrams. Dillinger is a
         decade-old, production-trusted editor with the Monaco engine, broader
-        cloud sync, and a workflow built around multiple documents.
+        native file saving, and a workflow built around multiple open documents.
       </p>
 
       <div className="overflow-x-auto mb-12">
@@ -72,7 +69,7 @@ export default function MarkLiveEditCompare() {
         <h2 className="text-2xl font-bold mb-4">When to choose Dillinger</h2>
         <ul className="space-y-3 text-text-muted">
           <li>You want a tool that has been battle-tested in production for over a decade</li>
-          <li>You sync to GitHub, Dropbox, Google Drive, OneDrive, or Bitbucket</li>
+          <li>You need native local file saving and export</li>
           <li>You manage multiple documents that should persist between sessions</li>
           <li>You want the VS Code editing experience with Vim or Emacs keybindings</li>
           <li>You need a focus / zen mode for distraction-free writing</li>

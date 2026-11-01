@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Explore Dillinger's features: Monaco-powered editor, live preview, GitHub sync, Dropbox integration, PDF export, Vim keybindings, zen mode, and more.",
+    "Explore Dillinger's features: a Monaco-powered local editor, live preview, native file saving, PDF export, and focused writing tools.",
   alternates: { canonical: "https://dillinger.io/features" },
 };
 
@@ -20,9 +20,9 @@ const FEATURES = [
       "See your rendered markdown in real time as you type. Scroll sync keeps the editor and preview aligned, so you always know where you are.",
   },
   {
-    title: "Cloud Sync",
+    title: "Native File Saving",
     description:
-      "Import and save files directly to GitHub, Dropbox, Google Drive, OneDrive, or Bitbucket. Your documents travel with you.",
+      "Open local files and save changes directly to disk. Your documents stay on your computer.",
   },
   {
     title: "Export Anywhere",
@@ -52,7 +52,7 @@ const FEATURES = [
   {
     title: "Auto Save",
     description:
-      "Your documents persist automatically in your browser. No account required, no data on our servers.",
+      "Opened files save directly to disk as you edit. New documents use Save As before they can be written.",
   },
   {
     title: "AI-Ready Formatting",

@@ -187,7 +187,7 @@ export default function MarkdownToHtmlPage() {
           <p className="text-text-muted mb-4">
             There is nothing to install and no account to create. The conversion
             happens entirely in your browser, which means your draft stays on
-            your machine unless you deliberately connect a cloud service. That
+            your machine. That
             makes Dillinger a good fit for sensitive notes, internal docs, and
             anything you would rather not upload to a third-party server just to
             see some HTML.

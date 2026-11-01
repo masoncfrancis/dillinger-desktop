@@ -7,18 +7,18 @@ import { WebOnly } from "@/components/ui/WebOnly";
 export const metadata: Metadata = {
   title: "Markdown Editor — Online, Free, with Live Preview | Dillinger",
   description:
-    "Free online Markdown editor with live preview. Write, format, and export Markdown to HTML or PDF — sync to GitHub, Dropbox & Google Drive. No signup.",
+    "Focused desktop Markdown editor with live preview, native file saving, and local exports.",
   alternates: { canonical: "https://dillinger.io" },
   openGraph: {
     title: "Markdown Editor — Online, Free, with Live Preview | Dillinger",
     description:
-      "Free online Markdown editor with live preview. Write, format, and export Markdown to HTML or PDF — sync to GitHub, Dropbox & Google Drive. No signup.",
+      "Focused desktop Markdown editor with live preview, native file saving, and local exports.",
     url: "https://dillinger.io",
   },
   twitter: {
     title: "Markdown Editor — Online, Free, with Live Preview | Dillinger",
     description:
-      "Free online Markdown editor with live preview. Write, format, and export Markdown to HTML or PDF — sync to GitHub, Dropbox & Google Drive. No signup.",
+      "Focused desktop Markdown editor with live preview, native file saving, and local exports.",
   },
 };
 
@@ -41,12 +41,12 @@ const HOMEPAGE_FEATURES = [
   {
     title: "No Signup",
     description:
-      "Open the editor and start writing. Documents persist locally in your browser — no account required.",
+      "Open a local file and start writing. Changes stay on your computer.",
   },
   {
-    title: "Cloud Sync",
+    title: "Local Files",
     description:
-      "Save and load files from GitHub, Dropbox, Google Drive, OneDrive, and Bitbucket.",
+      "Open, edit, auto-save, and export files directly on your computer.",
   },
   {
     title: "Export Anywhere",
@@ -79,12 +79,12 @@ const HOMEPAGE_FAQS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "What is the best free online markdown editor?",
     answer:
-      "Dillinger is widely considered one of the best free online markdown editors because it combines a Monaco-powered editor, live preview, and cloud sync to GitHub, Dropbox, Google Drive, OneDrive, and Bitbucket — with no signup, no paywall, and no usage limits.",
+      "Dillinger combines a Monaco-powered editor, live preview, native file saving, and local exports in a focused desktop workspace.",
   },
   {
     question: "Does Dillinger require a signup?",
     answer:
-      "No. You can open dillinger.io and start writing immediately. Accounts are only needed if you want to connect a third-party service like GitHub or Dropbox to sync files.",
+      "No. Dillinger is a local desktop editor and does not require an account.",
   },
   {
     question: "Does Dillinger support live preview?",
@@ -92,9 +92,9 @@ const HOMEPAGE_FAQS: ReadonlyArray<{ question: string; answer: string }> = [
       "Yes. Dillinger renders your markdown to HTML in real time as you type, with a side-by-side preview pane and synced scrolling so the editor and preview stay aligned.",
   },
   {
-    question: "Can I sync Dillinger with GitHub, Dropbox, or Google Drive?",
+    question: "Where are my documents saved?",
     answer:
-      "Yes. Dillinger has built-in OAuth integrations for GitHub, Dropbox, Google Drive, OneDrive, and Bitbucket. You can import existing markdown files, save changes back to the same repo or folder, and switch between providers without losing your work.",
+      "Documents are saved directly to local files that you open or create with Save As. Dillinger does not upload them anywhere.",
   },
   {
     question: "Can I export markdown to PDF or HTML?",
@@ -104,7 +104,7 @@ const HOMEPAGE_FAQS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "How is Dillinger different from StackEdit or Typora?",
     answer:
-      "Dillinger is a free, open-source web app focused on speed, live preview, and direct cloud sync — no installation and no paid tiers. StackEdit is also browser-based but heavier and slower to start, while Typora is a paid desktop application without browser-based editing or built-in cloud OAuth.",
+      "Dillinger is a focused desktop editor built around speed, live preview, native file operations, and keyboard-driven workflows.",
   },
   {
     question: "Is Dillinger free?",
@@ -114,7 +114,7 @@ const HOMEPAGE_FAQS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     question: "Does Dillinger work offline?",
     answer:
-      "Yes. After the initial load, the editor continues to work without an internet connection and your documents are auto-saved to your browser's local storage. Cloud sync features require connectivity, but core editing and preview do not.",
+      "Yes. Dillinger works offline. Open files and edits are handled locally on your computer.",
   },
 ];
 
@@ -145,8 +145,8 @@ function HomepageSeoContent() {
           Online Markdown Editor with Live Preview
         </h1>
         <p className="mt-4 text-lg text-text-muted max-w-2xl">
-          Dillinger is a free online markdown editor with live preview, cloud
-          sync, and zero signup friction.
+          Dillinger is a focused desktop markdown editor with live preview and
+          native local file saving.
         </p>
 
         <div className="mt-8 space-y-5 text-base leading-relaxed max-w-3xl">
@@ -158,11 +158,9 @@ function HomepageSeoContent() {
             of your way.
           </p>
           <p>
-            Connect your cloud accounts to sync documents directly with GitHub,
-            Dropbox, Google Drive, OneDrive, or Bitbucket. Drafts persist
-            locally so your work survives a closed tab, and one-click export
-            sends your document to Markdown, styled HTML, or PDF whenever you
-            need to share it.
+            Open local Markdown or HTML files, edit them with a Monaco-powered
+            editor, and save changes directly to disk. Export your document as
+            Markdown, styled HTML, or PDF whenever you need to share it.
           </p>
           <p>
             Built on the Monaco editor that powers VS Code, Dillinger gives
@@ -221,12 +219,6 @@ function HomepageSeoContent() {
             className="text-plum hover:underline underline-offset-4"
           >
             Compare alternatives
-          </Link>
-          <Link
-            href="/integrations"
-            className="text-plum hover:underline underline-offset-4"
-          >
-            Integrations
           </Link>
           <Link
             href="/ai"

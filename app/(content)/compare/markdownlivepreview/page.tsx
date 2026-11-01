@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Dillinger vs Markdown Live Preview",
   description:
-    "Compare Dillinger and Markdown Live Preview: features, cloud sync, persistence, and exports. Both are free online markdown editors — see which fits your workflow.",
+    "Compare Dillinger and Markdown Live Preview across local files, persistence, and exports.",
   alternates: { canonical: "https://dillinger.io/compare/markdownlivepreview" },
 };
 
@@ -15,12 +15,9 @@ const COMPARISON = [
   { feature: "Editor engine", dillinger: "Monaco (VS Code)", competitor: "Plain textarea" },
   { feature: "Live preview", dillinger: "Side-by-side", competitor: "Side-by-side" },
   { feature: "Multiple documents", dillinger: "Yes", competitor: "No" },
-  { feature: "Document persistence", dillinger: "Yes (localStorage)", competitor: "No (single scratchpad)" },
+  { feature: "Document persistence", dillinger: "Yes (local files)", competitor: "No (single scratchpad)" },
   { feature: "GitHub sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Dropbox sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Google Drive sync", dillinger: "Yes", competitor: "No" },
-  { feature: "OneDrive sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Bitbucket sync", dillinger: "Yes", competitor: "No" },
+  { feature: "Native file saving", dillinger: "Yes", competitor: "No" },
   { feature: "PDF export", dillinger: "Yes", competitor: "Yes" },
   { feature: "HTML export", dillinger: "Yes", competitor: "No" },
   { feature: "Vim keybindings", dillinger: "Yes", competitor: "No" },
@@ -41,7 +38,7 @@ export default function MarkdownLivePreviewCompare() {
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
         Markdown Live Preview is a minimal, open-source scratchpad for rendering
         a single piece of markdown in your browser. Dillinger is a full
-        workflow editor with cloud sync, multiple documents, and the Monaco
+        workflow editor with native file saving, multiple open documents, and the Monaco
         editor from VS Code.
       </p>
 
@@ -72,7 +69,7 @@ export default function MarkdownLivePreviewCompare() {
         <h2 className="text-2xl font-bold mb-4">When to choose Dillinger</h2>
         <ul className="space-y-3 text-text-muted">
           <li>You manage more than one document and need persistence between sessions</li>
-          <li>You sync to GitHub, Dropbox, Google Drive, OneDrive, or Bitbucket</li>
+          <li>You need native local file saving and export</li>
           <li>You want the VS Code editing experience with syntax highlighting</li>
           <li>You use Vim or Emacs keybindings</li>
           <li>You need HTML export alongside PDF</li>

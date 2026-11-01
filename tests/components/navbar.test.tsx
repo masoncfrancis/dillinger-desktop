@@ -210,12 +210,11 @@ describe("Navbar", () => {
 
   describe("handleExport", () => {
     function mockFetchSuccess(contentType = "application/octet-stream", filename?: string) {
-      const blob = new Blob(["content"], { type: contentType });
       const headers = new Headers({ "Content-Type": contentType });
       if (filename) {
         headers.set("Content-Disposition", `attachment; filename="${filename}"`);
       }
-      const response = new Response(blob, { status: 200, headers });
+      const response = new Response("content", { status: 200, headers });
       vi.spyOn(globalThis, "fetch").mockResolvedValue(response);
       return response;
     }
@@ -229,10 +228,12 @@ describe("Navbar", () => {
 
     beforeEach(() => {
       mockAnchor = { href: "", download: "", click: vi.fn() };
-      vi.spyOn(document, "createElement").mockImplementation((tag: string) => {
-        if (tag === "a") return mockAnchor as unknown as HTMLElement;
-        return originalCreateElement(tag);
-      });
+      vi.spyOn(document, "createElement").mockImplementation(
+        ((tag: string) => {
+          if (tag === "a") return mockAnchor as unknown as HTMLElement;
+          return originalCreateElement(tag);
+        }) as typeof document.createElement
+      );
       vi.spyOn(URL, "createObjectURL").mockReturnValue("blob:test-url");
       vi.spyOn(URL, "revokeObjectURL").mockImplementation(() => {});
     });

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best Online Markdown Editors (2026 Guide)",
   description:
-    "We tested the top free online markdown editors — Dillinger, StackEdit, Markdown Live Preview, HackMD, Typora, and more. Compare features, cloud sync, exports, and pricing in this 2026 guide.",
+    "We tested popular markdown editors — Dillinger, StackEdit, Markdown Live Preview, HackMD, Typora, and more. Compare features, local files, exports, and pricing in this 2026 guide.",
   alternates: {
     canonical: "https://dillinger.io/guide/best-online-markdown-editor",
   },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const TLDR = [
   {
     editor: "Dillinger",
-    bestFor: "Free online editor with cloud sync",
+    bestFor: "Focused local desktop editor",
     free: "Yes",
     cloud: "GitHub, Dropbox, Drive, OneDrive, Bitbucket",
   },
@@ -59,7 +59,7 @@ const EDITORS = [
   {
     rank: 1,
     name: "Dillinger",
-    tagline: "Best free online markdown editor with cloud sync",
+    tagline: "Best focused local markdown editor",
     url: "https://dillinger.io",
     description:
       "Dillinger is a free, browser-based markdown editor that runs the same Monaco engine that powers VS Code. It launches instantly without an account, renders a side-by-side live preview, and syncs files to GitHub, Dropbox, Google Drive, OneDrive, Bitbucket, and Medium. Exports include PDF, HTML, and styled markdown, and the editor supports Vim and Emacs keybindings out of the box.",
@@ -71,7 +71,7 @@ const EDITORS = [
     cons: [
       "No native real-time multi-user collaboration",
       "No built-in Mermaid diagram rendering",
-      "Documents persist via localStorage rather than a cloud account",
+      "Documents are saved directly as local files rather than to an app account",
     ],
   },
   {
@@ -143,7 +143,7 @@ const EDITORS = [
     cons: [
       "Not free — $14.99 one-time after the trial",
       "Desktop only; no web or mobile clients",
-      "No built-in cloud sync (relies on local files)",
+      "Uses native local files",
     ],
   },
   {
@@ -195,7 +195,7 @@ const FAQ = [
   },
   {
     q: "Can I edit markdown online without signing up?",
-    a: "Yes. Dillinger and Markdown Live Preview both work entirely in the browser with no account at all. Dillinger persists your work via localStorage so documents survive page reloads, and you can connect cloud providers later only if you want to. StackEdit and HackMD require sign-in for sync and most useful features.",
+    a: "Dillinger is a local desktop app. Documents are saved to files on your computer, while StackEdit and HackMD are browser-based services with their own persistence models.",
   },
   {
     q: "What is the best markdown editor for GitHub README files?",
@@ -211,11 +211,11 @@ const FAQ = [
   },
   {
     q: "Can I use markdown editors offline?",
-    a: "Yes, several. Dillinger persists documents to localStorage so the editor keeps working without a network connection. StackEdit installs a service worker for offline use. Typora and iA Writer are native desktop apps and are offline by default. Markdown Live Preview and HackMD generally need a connection.",
+    a: "Dillinger, Typora, and iA Writer work offline with local files. Browser-based alternatives may use service workers or require a connection.",
   },
   {
     q: "What is the difference between Dillinger and StackEdit?",
-    a: "Both are free, browser-based markdown editors with cloud sync. Dillinger uses the Monaco editor (VS Code), supports more cloud providers (OneDrive and Bitbucket in addition to GitHub, Dropbox, and Drive), exports to PDF, and includes Vim/Emacs keybindings — none of which StackEdit offers. StackEdit has Mermaid diagram rendering, which Dillinger does not currently include.",
+    a: "Dillinger is a desktop editor using Monaco, native file operations, PDF export, and Vim/Emacs keybindings. StackEdit is browser-based and includes Mermaid diagram rendering.",
   },
 ];
 

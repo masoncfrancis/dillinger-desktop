@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Dillinger vs StackEdit",
   description:
-    "Compare Dillinger and StackEdit: features, cloud sync, pricing, and developer experience. Both are free online markdown editors — see which fits your workflow.",
+    "Compare Dillinger and StackEdit across local files, exports, and developer experience.",
   alternates: { canonical: "https://dillinger.io/compare/stackedit" },
 };
 
@@ -14,17 +14,14 @@ const COMPARISON = [
   { feature: "Editor engine", dillinger: "Monaco (VS Code)", competitor: "CodeMirror" },
   { feature: "Live preview", dillinger: "Side-by-side", competitor: "Side-by-side" },
   { feature: "GitHub sync", dillinger: "Yes", competitor: "Yes" },
-  { feature: "Dropbox sync", dillinger: "Yes", competitor: "Yes" },
-  { feature: "Google Drive sync", dillinger: "Yes", competitor: "Yes" },
-  { feature: "OneDrive sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Bitbucket sync", dillinger: "Yes", competitor: "No" },
+  { feature: "Native file saving", dillinger: "Yes", competitor: "Browser-based" },
   { feature: "PDF export", dillinger: "Yes", competitor: "No" },
   { feature: "Vim keybindings", dillinger: "Yes", competitor: "No" },
   { feature: "Emacs keybindings", dillinger: "Yes", competitor: "No" },
   { feature: "Zen / focus mode", dillinger: "Yes", competitor: "No" },
   { feature: "KaTeX math", dillinger: "Yes", competitor: "Yes" },
   { feature: "Mermaid diagrams", dillinger: "No", competitor: "Yes" },
-  { feature: "Offline support", dillinger: "Yes (localStorage)", competitor: "Yes (service worker)" },
+  { feature: "Offline support", dillinger: "Yes (local files)", competitor: "Yes (service worker)" },
   { feature: "Dark mode", dillinger: "Yes", competitor: "No" },
   { feature: "AI-ready workflow", dillinger: "Yes", competitor: "No" },
 ];
@@ -80,7 +77,7 @@ export default function StackEditCompare() {
         <h2 className="text-2xl font-bold mb-4">When to choose StackEdit</h2>
         <ul className="space-y-3 text-text-muted">
           <li>You need Mermaid diagram support</li>
-          <li>You prefer service worker offline support over localStorage</li>
+          <li>You prefer service worker offline support over native files</li>
           <li>You need team collaboration features (paid plan)</li>
         </ul>
       </section>

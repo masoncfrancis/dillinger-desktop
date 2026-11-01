@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "README Editor — Write & Preview README.md Online",
   description:
-    "Write and edit README.md files online with live preview. GitHub-flavored Markdown, badges, tables, and code blocks. Sync and export to GitHub. Free, no signup.",
+      "Write and edit README.md files in a local desktop editor with live preview. GitHub-flavored Markdown, badges, tables, code blocks, and native file saving.",
   alternates: { canonical: "https://dillinger.io/readme-editor" },
 };
 
@@ -55,14 +55,14 @@ const FAQ = [
       "Absolutely. Badges are standard Markdown images, often from services like Shields.io, optionally wrapped in a link. Paste the badge Markdown at the top of your file and Dillinger renders it live alongside the rest of your content.",
   },
   {
-    question: "Can I save my README directly to GitHub?",
+    question: "Can I save my README directly to disk?",
     answer:
-      "Yes. Connect your GitHub account and you can open a README.md from a repository, edit it with live preview, and save your changes back. You can also export the file to download a clean README.md to commit manually.",
+      "Yes. Open a README.md from your computer, edit it with live preview, and save changes directly back to the local file.",
   },
   {
     question: "Do I need to install anything or sign up?",
     answer:
-      "No. Dillinger runs in your browser with no installation and no account required. You only authenticate if you choose to connect a cloud service such as GitHub for syncing files.",
+      "No. Dillinger is a local desktop editor and does not require an account.",
   },
   {
     question: "Will the preview match what GitHub shows?",
@@ -165,20 +165,17 @@ export default function ReadmeEditorPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-3">Sync and export to GitHub</h2>
+          <h2 className="text-2xl font-bold mb-3">Save and export locally</h2>
           <p className="text-text-muted mb-4">
             When your README is ready, you do not have to copy and paste it
-            anywhere. Connect your GitHub account and Dillinger can open an
-            existing README.md from any of your repositories, let you edit it with
-            full live preview, and save the changes back. It is a quick way to
-            polish documentation without leaving your browser or wrestling with a
-            terminal.
+            anywhere. Open an existing README.md from your computer, edit it with
+            full live preview, and save the changes back to the same local file.
           </p>
           <p className="text-text-muted mb-4">
             Prefer to keep things manual? Export a clean{" "}
             <code className="bg-bg-highlight px-1 rounded">README.md</code> file
             and commit it yourself, or export to HTML or PDF when you need to
-            share the documentation outside of GitHub. Your content is never
+             share the documentation anywhere. Your content is never
             locked in.
           </p>
         </section>

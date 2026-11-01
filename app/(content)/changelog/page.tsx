@@ -70,7 +70,7 @@ const RELEASES = [
       "Export to Markdown, styled HTML, and PDF",
       "Drag-and-drop file import",
       "Image paste from clipboard",
-      "Auto-save to localStorage",
+      "Native local-file auto-save",
       "Dark mode / night mode",
       "Zen mode for distraction-free writing",
       "Zustand state management with persistence",

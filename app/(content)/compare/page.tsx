@@ -12,7 +12,7 @@ const COMPETITORS = [
   {
     name: "StackEdit",
     slug: "stackedit",
-    tagline: "Both are browser-based markdown editors — but Dillinger is faster to start, requires no account, and supports more cloud providers.",
+    tagline: "Dillinger is a focused local desktop editor, while StackEdit is browser-based.",
   },
   {
     name: "HackMD",
@@ -22,17 +22,17 @@ const COMPETITORS = [
   {
     name: "Markdown Live Preview",
     slug: "markdownlivepreview",
-    tagline: "Markdown Live Preview is a minimal scratchpad. Dillinger adds cloud sync, multiple documents, and the Monaco editor for real workflows.",
+    tagline: "Markdown Live Preview is a minimal scratchpad. Dillinger adds native files and the Monaco editor for real workflows.",
   },
   {
     name: "Typora",
     slug: "typora",
-    tagline: "Typora is a paid desktop WYSIWYG editor. Dillinger is a free web-based editor with built-in cloud sync — no install required.",
+    tagline: "Typora is a paid desktop WYSIWYG editor. Dillinger is a focused desktop Markdown editor with native file operations.",
   },
   {
     name: "MarkLiveEdit",
     slug: "marklivedit",
-    tagline: "MarkLiveEdit is a newer lightweight tool. Dillinger has a decade of production trust, broader cloud sync, and Monaco-powered editing.",
+    tagline: "MarkLiveEdit is a newer lightweight tool. Dillinger combines native files with Monaco-powered editing.",
   },
 ];
 

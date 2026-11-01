@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Dillinger's privacy policy. We do not require an account, we store your documents locally in your browser, and we do not sell your data.",
+     "Dillinger's privacy policy. Documents are handled locally and saved to files on your computer.",
   alternates: { canonical: "https://dillinger.io/privacy" },
 };
 
@@ -20,40 +20,22 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-text-primary">The short version</h2>
           <p>
-            Dillinger is a browser-based markdown editor. You can use it without an
-            account. Your documents are saved in your own browser&apos;s local storage
-            — not on our servers. We do not sell your data.
+             Dillinger is a local desktop markdown editor. Your documents are saved
+             directly to files on your computer. We do not sell your data.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-text-primary">What we store</h2>
           <p>
-            <strong className="text-text-primary">In your browser:</strong> your
-            documents, editor settings (theme, keybindings, preview mode), and
-            recent files. This data lives in <code>localStorage</code> on the
-            device you are using. Clear your browser storage and it is gone.
+             <strong className="text-text-primary">On your computer:</strong> the
+             files you explicitly open or save, plus transient editor state while
+             the app is running.
           </p>
           <p>
-            <strong className="text-text-primary">On our servers:</strong> nothing
-            tied to your identity. We do not maintain user accounts and we do not
-            persist your document contents.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-text-primary">Cloud integrations</h2>
-          <p>
-            If you connect Dillinger to GitHub, Dropbox, Google Drive, OneDrive,
-            Bitbucket, or Medium, OAuth tokens are issued by those providers and
-            held only for the duration of your session so we can read and write
-            the specific files you ask us to. We do not browse your accounts in
-            the background.
-          </p>
-          <p>
-            Disconnecting is as simple as revoking access in that provider&apos;s
-            settings. You can also clear your local browser storage to remove any
-            session state on your end.
+             <strong className="text-text-primary">On our servers:</strong> nothing
+             tied to your identity. Dillinger has no account or cloud-storage
+             system and does not persist your document contents.
           </p>
         </section>
 
@@ -70,9 +52,8 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-text-primary">Exports and uploads</h2>
           <p>
-            HTML and PDF exports are generated on demand by our server. The
-            markdown you submit for export is processed transiently and is not
-            retained after the response is returned.
+             HTML and PDF exports are generated locally by the desktop app. Your
+             markdown is not sent to a cloud provider for export.
           </p>
         </section>
 

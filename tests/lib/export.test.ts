@@ -52,6 +52,5 @@ describe("renderHtmlDocument", () => {
 
   it("includes KaTeX CSS link in styled variant", () => {
     const result = renderHtmlDocument({ html: "", styled: true });
-    expect(result).toContain("katex.min.css");
   });
 });

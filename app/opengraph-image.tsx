@@ -51,7 +51,7 @@ export default function Image() {
         >
           <span>Live Preview</span>
           <span style={{ color: "#35D7BB" }}>·</span>
-          <span>Cloud Sync</span>
+          <span>Local files, focused writing</span>
           <span style={{ color: "#35D7BB" }}>·</span>
           <span>AI-Ready</span>
           <span style={{ color: "#35D7BB" }}>·</span>

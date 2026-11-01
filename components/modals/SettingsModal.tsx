@@ -64,21 +64,10 @@ export function SettingsModal() {
         </div>
 
         <div className="p-4 space-y-4">
-          {/* Auto Save */}
-          <SettingToggle
-            id="auto-save"
-            label="Auto Save"
-            checked={settings.enableAutoSave}
-            onChange={(v) => updateSettings({ enableAutoSave: v })}
-          />
-
-          {/* Local file auto-save */}
-          <SettingToggle
-            id="file-auto-save"
-            label="Auto Save Local File"
-            checked={settings.enableFileAutoSave}
-            onChange={(v) => updateSettings({ enableFileAutoSave: v })}
-          />
+          <p className="text-text-muted text-sm leading-relaxed">
+            Open files are saved directly to disk as you edit. New documents
+            must be saved with Save As before they can be written to disk.
+          </p>
 
           {/* Word Count */}
           <SettingToggle

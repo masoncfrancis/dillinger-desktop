@@ -29,7 +29,6 @@ interface AppState {
   setCurrentDocumentFileModifiedAt: (fileModifiedAt: number) => void;
   markCurrentDocumentSaved: (body: string, fileModifiedAt: number) => boolean;
   selectDocument: (id: string) => void;
-  deleteDocument: (id: string) => void;
   updateDocumentBody: (body: string) => void;
   updateDocumentTitle: (title: string) => void;
   setEditorInstance: (editor: Monaco.editor.IStandaloneCodeEditor | null) => void;
@@ -47,9 +46,6 @@ interface AppState {
   setEditorScrollPercent: (percent: number) => void;
   setEditorTopLine: (line: number) => void;
 
-  // Persistence
-  hydrate: () => void;
-  persist: (clearDirty?: boolean) => void;
 }
 
 const createDefaultDocument = (): Document => ({
@@ -59,10 +55,12 @@ const createDefaultDocument = (): Document => ({
   createdAt: new Date().toISOString(),
 });
 
+const initialDocument = createDefaultDocument();
+
 export const useStore = create<AppState>((set, get) => ({
   // Initial State
-  documents: [],
-  currentDocument: null,
+  documents: [initialDocument],
+  currentDocument: initialDocument,
   editorInstance: null,
   settings: DEFAULT_SETTINGS,
   sidebarOpen: false,
@@ -81,7 +79,6 @@ export const useStore = create<AppState>((set, get) => ({
       documents: [...state.documents, newDoc],
       currentDocument: newDoc,
     }));
-    get().persist();
   },
 
   createImportedDocument: (title: string, body: string, filePath?: string, fileModifiedAt?: number) => {
@@ -96,7 +93,6 @@ export const useStore = create<AppState>((set, get) => ({
       documents: [...state.documents, newDoc],
       currentDocument: newDoc,
     }));
-    get().persist();
   },
 
   setCurrentDocumentFilePath: (filePath: string, fileModifiedAt?: number) => {
@@ -113,7 +109,6 @@ export const useStore = create<AppState>((set, get) => ({
     );
 
     set({ currentDocument: updated, documents: updatedDocs });
-    get().persist();
   },
 
   markCurrentDocumentSaved: (body: string, fileModifiedAt: number) => {
@@ -126,7 +121,6 @@ export const useStore = create<AppState>((set, get) => ({
     );
 
     set({ currentDocument: updated, documents: updatedDocs, isDirty: false });
-    get().persist(false);
     return true;
   },
 
@@ -140,28 +134,13 @@ export const useStore = create<AppState>((set, get) => ({
     );
 
     set({ currentDocument: updated, documents: updatedDocs });
-    get().persist(false);
   },
 
   selectDocument: (id: string) => {
     const doc = get().documents.find((d) => d.id === id);
     if (doc) {
       set({ currentDocument: doc });
-      get().persist();
     }
-  },
-
-  deleteDocument: (id: string) => {
-    const { documents, currentDocument } = get();
-    const filtered = documents.filter((d) => d.id !== id);
-
-    let newCurrent = currentDocument;
-    if (currentDocument?.id === id) {
-      newCurrent = filtered[0] || null;
-    }
-
-    set({ documents: filtered, currentDocument: newCurrent });
-    get().persist();
   },
 
   updateDocumentBody: (body: string) => {
@@ -186,7 +165,6 @@ export const useStore = create<AppState>((set, get) => ({
     );
 
     set({ currentDocument: updated, documents: updatedDocs });
-    get().persist();
   },
 
   setEditorInstance: (editor) => set({ editorInstance: editor }),
@@ -217,7 +195,6 @@ export const useStore = create<AppState>((set, get) => ({
     );
 
     set({ currentDocument: updated, documents: updatedDocs });
-    get().persist();
   },
 
   // Settings Actions
@@ -225,7 +202,6 @@ export const useStore = create<AppState>((set, get) => ({
     set((state) => ({
       settings: { ...state.settings, ...newSettings },
     }));
-    get().persist();
   },
 
   // UI Actions
@@ -237,59 +213,4 @@ export const useStore = create<AppState>((set, get) => ({
   setEditorScrollPercent: (percent) => set({ editorScrollPercent: percent }),
   setEditorTopLine: (line) => set({ editorTopLine: line }),
 
-  // Persistence
-  hydrate: () => {
-    if (typeof window === "undefined") return;
-
-    try {
-      const filesJson = localStorage.getItem("files");
-      const currentJson = localStorage.getItem("currentDocument");
-      const settingsJson = localStorage.getItem("profileV3");
-
-      const isFirstVisit = !filesJson;
-      let documents: Document[] = filesJson ? JSON.parse(filesJson) : [];
-      let currentDocument: Document | null = currentJson ? JSON.parse(currentJson) : null;
-      const settings: UserSettings = settingsJson
-        ? { ...DEFAULT_SETTINGS, ...JSON.parse(settingsJson) }
-        : DEFAULT_SETTINGS;
-      const isDesktop = Boolean(window.dillingerDesktop?.isDesktop);
-
-      // Ensure at least one document exists
-      if (documents.length === 0) {
-        const defaultDoc = createDefaultDocument();
-        documents = [defaultDoc];
-        currentDocument = defaultDoc;
-      }
-
-      // Ensure currentDocument is valid
-      if (!currentDocument || !documents.find((d) => d.id === currentDocument!.id)) {
-        currentDocument = documents[0];
-      }
-
-      set({
-        documents,
-        currentDocument,
-        settings,
-        isDirty: false,
-        sidebarOpen: isFirstVisit && !isDesktop,
-      });
-    } catch (e) {
-      console.error("Failed to hydrate state:", e);
-    }
-  },
-
-  persist: (clearDirty = true) => {
-    if (typeof window === "undefined") return;
-
-    const { documents, currentDocument, settings } = get();
-
-    try {
-      localStorage.setItem("files", JSON.stringify(documents));
-      localStorage.setItem("currentDocument", JSON.stringify(currentDocument));
-      localStorage.setItem("profileV3", JSON.stringify(settings));
-      if (clearDirty) set({ isDirty: false });
-    } catch (e) {
-      console.error("Failed to persist state:", e);
-    }
-  },
 }));

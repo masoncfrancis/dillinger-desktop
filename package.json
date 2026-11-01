@@ -2,7 +2,7 @@
   "name": "dillinger",
   "version": "0.2.0",
   "private": true,
-  "description": "Cloud-enabled Markdown editor",
+  "description": "Local desktop Markdown editor",
   "author": "Dillinger Team <support@dillinger.io>",
   "desktopName": "Dillinger",
   "scripts": {
@@ -33,7 +33,6 @@
     "breakdance": "^3.0.1",
     "clsx": "^2.1.1",
     "dompurify": "^3.3.1",
-    "dropbox": "^10.34.0",
     "highlight.js": "^11.11.1",
     "katex": "^0.16.38",
     "lucide-react": "^0.562.0",

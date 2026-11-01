@@ -44,13 +44,13 @@ const REASONS = [
   },
   {
     stat: "5",
-    label: "cloud integrations",
-    detail: "Sync with GitHub, Dropbox, Google Drive, OneDrive, and Bitbucket",
+    label: "local files",
+    detail: "Open and save documents directly on your computer",
   },
   {
     stat: "0",
     label: "signup required",
-    detail: "Start writing immediately. Documents save to your browser automatically",
+    detail: "Start writing immediately. Save directly to a local file",
   },
 ];
 
@@ -100,8 +100,8 @@ export default function AIPage() {
           <p>
             Dillinger gives you a professional editing environment for this
             workflow — live preview so you see exactly what the model will
-            parse, cloud sync so your prompts and documents are available
-            everywhere, and export so you can move content between tools
+            parse, native file saving so your prompts stay on your computer, and
+            export so you can move content between tools
             without friction.
           </p>
         </div>

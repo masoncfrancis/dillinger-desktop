@@ -1,39 +1,12 @@
 import { test, expect } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 
-const seededDocument = {
-  id: "playwright-doc",
-  title: "Playwright Smoke.md",
-  body: "# Playwright Smoke\n\nThis document stabilizes the shell for smoke coverage.",
-  createdAt: "2026-03-10T00:00:00.000Z",
-};
-
 const PNG_BYTES = Buffer.from(
   "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9sotG2UAAAAASUVORK5CYII=",
   "base64"
 );
 
-test.beforeEach(async ({ page }) => {
-  await page.addInitScript((documentState) => {
-    window.localStorage.setItem("files", JSON.stringify([documentState]));
-    window.localStorage.setItem("currentDocument", JSON.stringify(documentState));
-    window.localStorage.setItem(
-      "profileV3",
-      JSON.stringify({
-        enableAutoSave: true,
-        enableWordsCount: true,
-        enableCharactersCount: true,
-        enableScrollSync: true,
-        tabSize: 4,
-        keybindings: "default",
-        enableNightMode: false,
-        enableGitHubComment: true,
-      })
-    );
-  }, seededDocument);
-});
-
-test("imports markdown/html files, preserves prior documents, inserts images, and exports html", async ({
+test("imports local markdown/html files, inserts images, and exports html", async ({
   page,
 }) => {
   await page.goto("/");
@@ -48,9 +21,6 @@ test("imports markdown/html files, preserves prior documents, inserts images, an
     page.getByRole("heading", { level: 2, name: "Imported.md" })
   ).toBeVisible();
   await expect(page.locator("#preview h1")).toHaveText("Imported");
-  await expect(
-    page.getByRole("button", { name: /Playwright Smoke\.md/ })
-  ).toBeVisible();
   await expect(page.getByRole("button", { name: /Imported\.md/ })).toBeVisible();
 
   await page.getByTestId("document-import-input").setInputFiles({
@@ -99,5 +69,4 @@ test("imports markdown/html files, preserves prior documents, inserts images, an
   expect(styledDownload.suggestedFilename()).toBe("Imported.html");
   const styledHtml = await readFile(await styledDownload.path(), "utf8");
   expect(styledHtml).toContain("<style>");
-  expect(styledHtml).toContain("katex.min.css");
 });

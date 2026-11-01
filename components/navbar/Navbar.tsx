@@ -42,10 +42,10 @@ export function Navbar() {
   const createDocument = useStore((state) => state.createDocument);
   const createImportedDocument = useStore((state) => state.createImportedDocument);
   const setCurrentDocumentFilePath = useStore((state) => state.setCurrentDocumentFilePath);
+  const markCurrentDocumentSaved = useStore((state) => state.markCurrentDocumentSaved);
   const insertMarkdownAtCursor = useStore((state) => state.insertMarkdownAtCursor);
   const setZenMode = useStore((state) => state.setZenMode);
   const toggleShortcuts = useStore((state) => state.toggleShortcuts);
-  const persist = useStore((state) => state.persist);
   const { notify } = useToast();
   const { upload } = useImageUpload();
   const desktop = getDesktopBridge();
@@ -211,15 +211,15 @@ export function Navbar() {
 
       if (!saved) return false;
 
-      setCurrentDocumentFilePath(saved.filePath, saved.modifiedAt);
-      persist();
-      notify(`Saved "${saved.fileName}"`);
+       setCurrentDocumentFilePath(saved.filePath, saved.modifiedAt);
+       markCurrentDocumentSaved(currentDocument.body, saved.modifiedAt);
+       notify(`Saved "${saved.fileName}"`);
       return true;
     } catch (error) {
       notify(error instanceof Error ? error.message : "Failed to save file");
       return false;
     }
-  }, [currentDocument, notify, persist, setCurrentDocumentFilePath]);
+  }, [currentDocument, markCurrentDocumentSaved, notify, setCurrentDocumentFilePath]);
 
   const handleCloseRequest = useCallback(async (shouldQuit = false) => {
     if (!desktop) return;

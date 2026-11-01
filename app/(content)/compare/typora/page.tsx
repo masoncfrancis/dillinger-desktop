@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Dillinger vs Typora",
   description:
-    "Compare Dillinger (free web-based markdown editor with cloud sync) and Typora ($14.99 desktop WYSIWYG editor). See which fits your writing workflow.",
+    "Compare Dillinger, a focused local Markdown editor, and Typora, a desktop WYSIWYG editor.",
   alternates: { canonical: "https://dillinger.io/compare/typora" },
 };
 
@@ -15,10 +15,7 @@ const COMPARISON = [
   { feature: "Editor model", dillinger: "Side-by-side preview", competitor: "Seamless WYSIWYG" },
   { feature: "Editor engine", dillinger: "Monaco (VS Code)", competitor: "Custom WYSIWYG" },
   { feature: "GitHub sync", dillinger: "Yes", competitor: "No" },
-  { feature: "Dropbox sync", dillinger: "Yes", competitor: "Folder-based only" },
-  { feature: "Google Drive sync", dillinger: "Yes", competitor: "Folder-based only" },
-  { feature: "OneDrive sync", dillinger: "Yes", competitor: "Folder-based only" },
-  { feature: "Bitbucket sync", dillinger: "Yes", competitor: "No" },
+  { feature: "Native file saving", dillinger: "Yes", competitor: "Yes" },
   { feature: "PDF export", dillinger: "Yes", competitor: "Yes" },
   { feature: "HTML export", dillinger: "Yes", competitor: "Yes" },
   { feature: "DOCX / Word export", dillinger: "No", competitor: "Yes" },
