@@ -208,6 +208,43 @@ describe("Navbar", () => {
     expect(input).toHaveAttribute("accept", "image/*");
   });
 
+  it("updates the document title after Save As", async () => {
+    const user = userEvent.setup();
+    const saveFile = vi.fn().mockResolvedValue({
+      filePath: "C:/Documents/renamed.md",
+      fileName: "renamed.md",
+      modifiedAt: 20,
+    });
+    Object.defineProperty(window, "dillingerDesktop", {
+      configurable: true,
+      value: {
+        isDesktop: true,
+        platform: "win32",
+        openFile: vi.fn(),
+        saveFile,
+        writeFile: vi.fn(),
+        printPdf: vi.fn(),
+        confirmUnsavedChanges: vi.fn(),
+        confirmClose: vi.fn(),
+        quit: vi.fn(),
+        onMenuAction: vi.fn(() => vi.fn()),
+        onRequestClose: vi.fn(() => vi.fn()),
+      },
+    });
+    render(<Navbar />);
+
+    await user.click(screen.getByRole("button", { name: "Save local file as" }));
+
+    await waitFor(() => {
+      expect(saveFile).toHaveBeenCalledWith({
+        filePath: undefined,
+        fileName: "Test Document",
+        content: "# Hello World",
+      });
+    });
+    expect(useStore.getState().currentDocument?.title).toBe("renamed.md");
+  });
+
   describe("handleExport", () => {
     function mockFetchSuccess(contentType = "application/octet-stream", filename?: string) {
       const headers = new Headers({ "Content-Type": contentType });

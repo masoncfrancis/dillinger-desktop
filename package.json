@@ -1,10 +1,10 @@
 {
-  "name": "dillinger",
+  "name": "dillinger-desktop",
   "version": "1.0.0",
   "private": true,
   "description": "Local desktop Markdown editor",
   "author": "Dillinger Team <support@dillinger.io>",
-  "desktopName": "Dillinger",
+  "desktopName": "Dillinger Desktop",
   "scripts": {
     "dev": "next dev",
     "electron:dev": "concurrently -k \"next dev -H 127.0.0.1 -p 3000\" \"wait-on http://127.0.0.1:3000 && electron .\"",
