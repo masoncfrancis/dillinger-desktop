@@ -29,6 +29,7 @@ interface AppState {
   setCurrentDocumentFileModifiedAt: (fileModifiedAt: number) => void;
   markCurrentDocumentSaved: (body: string, fileModifiedAt: number) => boolean;
   selectDocument: (id: string) => void;
+  closeDocument: (id: string) => void;
   updateDocumentBody: (body: string) => void;
   updateDocumentTitle: (title: string) => void;
   setEditorInstance: (editor: Monaco.editor.IStandaloneCodeEditor | null) => void;
@@ -141,6 +142,32 @@ export const useStore = create<AppState>((set, get) => ({
     if (doc) {
       set({ currentDocument: doc });
     }
+  },
+
+  closeDocument: (id: string) => {
+    const { documents, currentDocument } = get();
+    const remaining = documents.filter((document) => document.id !== id);
+    if (remaining.length === documents.length) return;
+
+    if (remaining.length === 0) {
+      const replacement = createDefaultDocument();
+      set({
+        documents: [replacement],
+        currentDocument: replacement,
+        isDirty: false,
+      });
+      return;
+    }
+
+    const closingCurrent = currentDocument?.id === id;
+    const nextDocument = closingCurrent
+      ? remaining[0]
+      : currentDocument;
+    set({
+      documents: remaining,
+      currentDocument: nextDocument,
+      ...(closingCurrent ? { isDirty: false } : {}),
+    });
   },
 
   updateDocumentBody: (body: string) => {

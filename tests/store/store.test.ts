@@ -104,6 +104,28 @@ describe("useStore", () => {
     expect(useStore.getState().isDirty).toBe(true);
   });
 
+  it("closes an open document without deleting its file", () => {
+    const first = createTestDocument({ id: "first", title: "First.md" });
+    const second = createTestDocument({ id: "second", title: "Second.md" });
+    useStore.setState({ documents: [first, second], currentDocument: first });
+
+    useStore.getState().closeDocument("first");
+
+    expect(useStore.getState().documents).toEqual([second]);
+    expect(useStore.getState().currentDocument?.id).toBe("second");
+  });
+
+  it("leaves a new untitled document when the last file is closed", () => {
+    const document = createTestDocument({ id: "only", title: "Only.md" });
+    useStore.setState({ documents: [document], currentDocument: document, isDirty: true });
+
+    useStore.getState().closeDocument("only");
+
+    expect(useStore.getState().documents).toHaveLength(1);
+    expect(useStore.getState().currentDocument?.title).toBe(DEFAULT_DOCUMENT_TITLE);
+    expect(useStore.getState().isDirty).toBe(false);
+  });
+
   it("updates settings in memory without local storage", () => {
     useStore.getState().updateSettings({ tabSize: 2 });
 

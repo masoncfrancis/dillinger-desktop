@@ -1,6 +1,6 @@
 {
   "name": "dillinger",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Local desktop Markdown editor",
   "author": "Dillinger Team <support@dillinger.io>",
