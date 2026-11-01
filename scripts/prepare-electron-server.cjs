@@ -15,4 +15,11 @@ fs.cpSync(path.join(root, "public"), path.join(standalone, "public"), {
   recursive: true,
 });
 
+// Next's desktop tracing exclusions can leave empty external-package paths
+// under .next/node_modules, which causes 7-Zip to fail during NSIS packaging.
+fs.rmSync(path.join(standalone, ".next", "node_modules"), {
+  recursive: true,
+  force: true,
+});
+
 console.log("Prepared Next standalone server for Electron packaging.");

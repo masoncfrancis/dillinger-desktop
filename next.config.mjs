@@ -1,16 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
-  experimental: {
-    // Optimize barrel file imports for better tree-shaking
-    // This transforms imports from lucide-react to direct icon imports
-    optimizePackageImports: ["lucide-react"],
-    serverComponentsExternalPackages: ["@sparticuz/chromium", "puppeteer-core"],
+  turbopack: {
+    root: process.cwd(),
   },
+  // Optimize barrel file imports for better tree-shaking.
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
+  // Keep native Chromium dependencies outside the server bundle.
+  serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core"],
 };
 
 if (process.env.NEXT_DESKTOP_BUILD === "1") {
-  nextConfig.experimental.outputFileTracingExcludes = {
+  nextConfig.outputFileTracingExcludes = {
     "*": [
       "node_modules/@sparticuz/chromium/**",
       "node_modules/puppeteer-core/**",
