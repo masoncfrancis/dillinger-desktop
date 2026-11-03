@@ -142,5 +142,8 @@
         "role": "Editor"
       }
     ]
+  },
+  "dependencies": {
+    "vite": "^8.3.5"
   }
 }
