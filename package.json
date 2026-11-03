@@ -52,7 +52,7 @@
     "eslint-config-next": "16.4.3",
     "highlight.js": "^11.11.1",
     "jsdom": "^28.1.0",
-    "katex": "^0.16.38",
+    "katex": "^0.18.2",
     "lucide-react": "^0.562.0",
     "markdown-it": "^14.3.3",
     "markdown-it-abbr": "^2.0.0",
