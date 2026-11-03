@@ -81,7 +81,7 @@ existing web API during this transition.
 
 ## 🧱 Requirements
 
-* Node.js 18+
+* Node.js 24+
 * npm / yarn / pnpm / bun
 
 ---

@@ -2,6 +2,9 @@
   "name": "@dillinger/cli",
   "version": "0.1.0",
   "description": "Command-line interface for Dillinger markdown editor",
+  "engines": {
+    "node": ">=24"
+  },
   "bin": {
     "dlg": "./dist/index.js"
   },
@@ -12,7 +15,7 @@
   },
   "devDependencies": {
     "typescript": "^5.0.0",
-    "@types/node": "^20.0.0"
+    "@types/node": "^24.0.0"
   },
   "keywords": ["markdown", "dillinger", "cli", "editor"],
   "license": "MIT"
