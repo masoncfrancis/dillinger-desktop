@@ -13,7 +13,6 @@ interface AppState {
   settings: UserSettings;
 
   // UI State
-  sidebarOpen: boolean;
   settingsOpen: boolean;
   shortcutsOpen: boolean;
   previewVisible: boolean;
@@ -39,7 +38,6 @@ interface AppState {
   updateSettings: (settings: Partial<UserSettings>) => void;
 
   // UI Actions
-  toggleSidebar: () => void;
   toggleSettings: () => void;
   toggleShortcuts: () => void;
   togglePreview: () => void;
@@ -54,6 +52,7 @@ const createDefaultDocument = (): Document => ({
   title: DEFAULT_DOCUMENT_TITLE,
   body: DEFAULT_DOCUMENT_BODY,
   createdAt: new Date().toISOString(),
+  isDirty: false,
 });
 
 const initialDocument = createDefaultDocument();
@@ -64,7 +63,6 @@ export const useStore = create<AppState>((set, get) => ({
   currentDocument: initialDocument,
   editorInstance: null,
   settings: DEFAULT_SETTINGS,
-  sidebarOpen: false,
   settingsOpen: false,
   shortcutsOpen: false,
   previewVisible: true,
@@ -79,6 +77,7 @@ export const useStore = create<AppState>((set, get) => ({
     set((state) => ({
       documents: [...state.documents, newDoc],
       currentDocument: newDoc,
+      isDirty: false,
     }));
   },
 
@@ -93,6 +92,7 @@ export const useStore = create<AppState>((set, get) => ({
     set((state) => ({
       documents: [...state.documents, newDoc],
       currentDocument: newDoc,
+      isDirty: false,
     }));
   },
 
@@ -121,7 +121,9 @@ export const useStore = create<AppState>((set, get) => ({
       doc.id === currentDocument.id ? updated : doc
     );
 
-    set({ currentDocument: updated, documents: updatedDocs, isDirty: false });
+    set({ currentDocument: { ...updated, isDirty: false }, documents: updatedDocs.map((doc) =>
+      doc.id === updated.id ? { ...updated, isDirty: false } : doc
+    ), isDirty: false });
     return true;
   },
 
@@ -140,7 +142,7 @@ export const useStore = create<AppState>((set, get) => ({
   selectDocument: (id: string) => {
     const doc = get().documents.find((d) => d.id === id);
     if (doc) {
-      set({ currentDocument: doc });
+      set({ currentDocument: doc, isDirty: doc.isDirty === true });
     }
   },
 
@@ -166,7 +168,7 @@ export const useStore = create<AppState>((set, get) => ({
     set({
       documents: remaining,
       currentDocument: nextDocument,
-      ...(closingCurrent ? { isDirty: false } : {}),
+      ...(closingCurrent ? { isDirty: nextDocument?.isDirty === true } : {}),
     });
   },
 
@@ -174,7 +176,7 @@ export const useStore = create<AppState>((set, get) => ({
     const { currentDocument, documents } = get();
     if (!currentDocument) return;
 
-    const updated = { ...currentDocument, body };
+    const updated = { ...currentDocument, body, isDirty: true };
     const updatedDocs = documents.map((d) =>
       d.id === currentDocument.id ? updated : d
     );
@@ -216,12 +218,12 @@ export const useStore = create<AppState>((set, get) => ({
 
     if (!currentDocument) return;
 
-    const updated = { ...currentDocument, body: `${currentDocument.body}${markdown}` };
+    const updated = { ...currentDocument, body: `${currentDocument.body}${markdown}`, isDirty: true };
     const updatedDocs = documents.map((doc) =>
       doc.id === currentDocument.id ? updated : doc
     );
 
-    set({ currentDocument: updated, documents: updatedDocs });
+    set({ currentDocument: updated, documents: updatedDocs, isDirty: true });
   },
 
   // Settings Actions
@@ -232,7 +234,6 @@ export const useStore = create<AppState>((set, get) => ({
   },
 
   // UI Actions
-  toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
   toggleSettings: () => set((state) => ({ settingsOpen: !state.settingsOpen })),
   toggleShortcuts: () => set((state) => ({ shortcutsOpen: !state.shortcutsOpen })),
   togglePreview: () => set((state) => ({ previewVisible: !state.previewVisible })),

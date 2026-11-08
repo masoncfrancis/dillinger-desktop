@@ -6,7 +6,7 @@ test("loads the editor shell and core controls", async ({ page }) => {
   await expect(
     page.getByRole("heading", { level: 2, name: "Untitled Document.md" })
   ).toBeVisible();
-  await expect(page.getByRole("button", { name: "Toggle sidebar" })).toBeVisible();
+  await expect(page.getByRole("tablist", { name: "Open files" })).toBeVisible();
   await expect(page.locator("#preview")).toBeVisible();
   await expect(page.getByTestId("word-count")).toBeVisible();
   await expect(page.getByTestId("character-count")).toBeVisible();

@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState, useCallback, memo } from "react";
-import dynamic from "next/dynamic";
 import { X, Upload } from "lucide-react";
 import { Navbar } from "@/components/navbar/Navbar";
 import { DocumentTitle } from "@/components/editor/DocumentTitle";
+import { DocumentTabs } from "@/components/editor/DocumentTabs";
 import { MonacoEditor } from "@/components/editor/MonacoEditor";
 import { MarkdownPreview } from "@/components/preview/MarkdownPreview";
 import { SettingsModal } from "@/components/modals/SettingsModal";
@@ -14,12 +14,6 @@ import { useStore } from "@/stores/store";
 import { EditorSkeleton } from "@/components/ui/Skeleton";
 import { useImageUpload } from "@/hooks/useImageUpload";
 import { importDocumentFile } from "@/lib/import";
-
-// Keep the sidebar client-only because it owns interactive editor state.
-const Sidebar = dynamic(
-  () => import("@/components/sidebar/Sidebar").then((mod) => mod.Sidebar),
-  { ssr: false }
-);
 
 const DropZoneOverlay = memo(function DropZoneOverlay({
   isDragging,
@@ -211,12 +205,10 @@ function EditorContent() {
     >
       <DropZoneOverlay isDragging={isDragging} />
 
-      {/* Sidebar */}
-      <Sidebar />
-
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0">
         <Navbar />
+        <DocumentTabs />
         <DocumentTitle />
 
         {/* Editor + Preview */}

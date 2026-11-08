@@ -8,7 +8,6 @@ import { importDocumentFile } from "@/lib/import";
 import { getExportFilename } from "@/lib/export";
 import { getDesktopBridge } from "@/lib/desktop";
 import {
-  Menu,
   Eye,
   EyeOff,
   Settings,
@@ -33,7 +32,6 @@ function getDownloadFilename(response: Response, fallback: string): string {
 }
 
 export function Navbar() {
-  const toggleSidebar = useStore((state) => state.toggleSidebar);
   const toggleSettings = useStore((state) => state.toggleSettings);
   const togglePreview = useStore((state) => state.togglePreview);
   const previewVisible = useStore((state) => state.previewVisible);
@@ -274,9 +272,6 @@ export function Navbar() {
       case "save-as":
         void handleSaveLocalFile(true);
         break;
-      case "toggle-sidebar":
-        toggleSidebar();
-        break;
       case "toggle-preview":
         togglePreview();
         break;
@@ -293,7 +288,7 @@ export function Navbar() {
         void handleCloseRequest(true);
         break;
     }
-  }, [createDocument, handleCloseRequest, handleOpenLocalFile, handleSaveLocalFile, notify, setZenMode, togglePreview, toggleShortcuts, toggleSidebar]);
+  }, [createDocument, handleCloseRequest, handleOpenLocalFile, handleSaveLocalFile, notify, setZenMode, togglePreview, toggleShortcuts]);
 
   useEffect(() => {
     if (!desktop) return;
@@ -350,14 +345,6 @@ export function Navbar() {
     <nav className="h-14 bg-bg-navbar flex items-center justify-between px-4 z-navbar">
       {/* Left side */}
       <div className="flex items-center gap-4">
-        <button
-          onClick={toggleSidebar}
-          aria-label="Toggle sidebar"
-          className="text-text-invert hover:text-plum transition-all active:scale-[0.97]
-                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2 focus-visible:ring-offset-bg-navbar rounded"
-        >
-          <Menu size={24} />
-        </button>
         <span className="text-plum font-bold text-xl tracking-wide hidden sm:block">
           DILLINGER
         </span>

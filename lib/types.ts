@@ -5,6 +5,7 @@ export interface Document {
   createdAt: string;
   filePath?: string;
   fileModifiedAt?: number;
+  isDirty?: boolean;
 }
 
 export interface UserSettings {
@@ -25,117 +26,4 @@ export const DEFAULT_SETTINGS: UserSettings = {
   enableNightMode: false,
 };
 
-export const DEFAULT_DOCUMENT_BODY = `# Welcome to Dillinger
-
-A clean, distraction-free markdown editor. Type on the left, see the rendered output on the right.
-
----
-
-## Text Formatting
-
-Markdown makes it easy to format text. You can write in **bold**, *italic*, or ~~strikethrough~~. Combine them for ***bold italic*** text. Use \`inline code\` for technical terms.
-
-## Lists
-
-Unordered lists use dashes, asterisks, or plus signs:
-
-- Open local Markdown and HTML files
-- Export to Markdown, HTML, or PDF
-- Drag and drop files directly into the editor
-
-Ordered lists are numbered automatically:
-
-1. Write your markdown
-2. Preview the rendered output
-3. Save changes directly to disk
-
-Nested lists work too:
-
-- Local features
-  - Auto-save to browser storage
-  - Image paste from clipboard
-
-## Task Lists
-
-- [x] Set up the editor
-- [x] Write some markdown
-- [ ] Save the finished document
-- [ ] Export the finished document
-
-## Links and Images
-
-Link to any page with [inline links](https://dillinger.io) or use [reference-style links][dillinger].
-
-Images use a similar syntax:
-
-![Placeholder](https://placehold.co/600x200/2B2F36/35D7BB?text=Your+Image+Here)
-
-[dillinger]: https://dillinger.io
-
-## Blockquotes
-
-> The art of writing is the art of discovering what you believe.
->
-> — Gustave Flaubert
-
-Blockquotes can contain other markdown elements:
-
-> **Tip:** Use \`Cmd+Shift+Z\` to enter zen mode for distraction-free writing.
-
-## Code
-
-Fenced code blocks support syntax highlighting:
-
-\`\`\`javascript
-function greet(name) {
-  return \`Hello, \${name}.\`;
-}
-
-console.log(greet("world"));
-\`\`\`
-
-\`\`\`python
-def fibonacci(n):
-    a, b = 0, 1
-    for _ in range(n):
-        a, b = b, a + b
-    return a
-\`\`\`
-
-## Tables
-
-| Shortcut | Action |
-|----------|--------|
-| \`⌘ ⇧ Z\` | Toggle zen mode |
-| \`Escape\` | Exit zen mode |
-| \`?\` | Keyboard shortcuts |
-
-Tables support alignment:
-
-| Feature | Status | Notes |
-|:--------|:------:|------:|
-| Markdown editing | Active | Monaco-powered |
-| Live preview | Active | Scroll-synced |
-| Local file saving | Available | Native desktop dialogs |
-| PDF export | Available | Native desktop export |
-
-## Footnotes
-
-Dillinger supports extended markdown syntax including footnotes[^1] and definition lists.
-
-[^1]: Footnotes appear at the bottom of the rendered preview.
-
-## Math
-
-Inline math: $E = mc^2$
-
-Block equations:
-
-$$
-\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}
-$$
-
----
-
-*Your documents save automatically. Start writing.*
-`;
+export const DEFAULT_DOCUMENT_BODY = "";

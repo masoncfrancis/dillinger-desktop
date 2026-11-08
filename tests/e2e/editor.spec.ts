@@ -4,11 +4,11 @@ test.beforeEach(async ({ page }) => {
   await page.goto("/");
 });
 
-test("creates an in-memory document without session storage", async ({ page }) => {
-  await expect(page.getByRole("heading", { level: 2, name: "Untitled Document.md" })).toBeVisible();
-  await page.getByRole("button", { name: "Toggle sidebar" }).click();
-  await page.getByRole("button", { name: "New Document" }).click();
-  await expect(page.locator("aside ul li")).toHaveCount(2);
+test("starts with a blank tab and creates another in-memory document", async ({ page }) => {
+  await expect(page.getByRole("tab", { name: "Untitled Document.md" })).toBeVisible();
+  await expect(page.locator(".monaco-editor")).toBeVisible({ timeout: 15_000 });
+  await page.getByRole("button", { name: "New document" }).click();
+  await expect(page.getByRole("tab", { name: "Untitled Document.md" })).toHaveCount(2);
   await expect(page.evaluate(() => localStorage.length)).resolves.toBe(0);
 });
 
@@ -31,6 +31,6 @@ test("opens settings and changes editor preferences in memory", async ({ page })
 });
 
 test("does not expose file deletion controls", async ({ page }) => {
-  await page.getByRole("button", { name: "Toggle sidebar" }).click();
-  await expect(page.getByRole("button", { name: "Delete Document" })).toHaveCount(0);
+  await expect(page.getByRole("tablist", { name: "Open files" })).toBeVisible();
+  await expect(page.getByText("Open files", { exact: true })).toHaveCount(0);
 });

@@ -13,7 +13,6 @@ function resetStore() {
       currentDocument: null,
       editorInstance: null,
       settings: { ...DEFAULT_SETTINGS },
-      sidebarOpen: true,
       settingsOpen: false,
       shortcutsOpen: false,
       previewVisible: true,

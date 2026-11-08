@@ -18,10 +18,10 @@ describe("Skeleton", () => {
   it("accepts custom className on skeleton elements", () => {
     render(<EditorSkeleton />);
 
-    const wideSkeletons = document.querySelectorAll(".h-8.w-32");
+    const wideSkeletons = document.querySelectorAll(".h-7.w-36");
     expect(wideSkeletons.length).toBeGreaterThan(0);
 
-    const narrowSkeletons = document.querySelectorAll(".h-6.w-24");
+    const narrowSkeletons = document.querySelectorAll(".h-6.w-48");
     expect(narrowSkeletons.length).toBeGreaterThan(0);
   });
 
@@ -36,9 +36,6 @@ describe("Skeleton", () => {
 
   it("renders the full editor skeleton layout structure", () => {
     render(<EditorSkeleton />);
-
-    const sidebar = document.querySelector("aside");
-    expect(sidebar).toBeInTheDocument();
 
     const main = document.querySelector("main");
     expect(main).toBeInTheDocument();

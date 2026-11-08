@@ -342,7 +342,6 @@ function createApplicationMenu() {
     {
       label: "View",
       submenu: [
-        { label: "Toggle Sidebar", accelerator: "CmdOrCtrl+B", click: () => send("toggle-sidebar") },
         { label: "Toggle Preview", accelerator: "CmdOrCtrl+\\", click: () => send("toggle-preview") },
         { label: "Zen Mode", accelerator: "CmdOrCtrl+Shift+Z", click: () => send("zen") },
         { type: "separator" },

@@ -35,7 +35,6 @@ function resetStore() {
       },
       editorInstance: null,
       settings: { ...initialState.settings },
-      sidebarOpen: false,
       settingsOpen: false,
       previewVisible: true,
       zenMode: false,
@@ -54,27 +53,15 @@ describe("Navbar", () => {
     vi.restoreAllMocks();
   });
 
-  it("renders menu icon, logo, and action buttons", () => {
+  it("renders logo and action buttons", () => {
     render(<Navbar />);
 
-    expect(screen.getByRole("button", { name: "Toggle sidebar" })).toBeInTheDocument();
     expect(screen.getByText("DILLINGER")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Export document" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /preview/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Open settings" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Enter zen mode" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Import file" })).toBeInTheDocument();
-  });
-
-  it("calls toggleSidebar when menu button is clicked", async () => {
-    const user = userEvent.setup();
-    render(<Navbar />);
-
-    expect(useStore.getState().sidebarOpen).toBe(false);
-
-    await user.click(screen.getByRole("button", { name: "Toggle sidebar" }));
-
-    expect(useStore.getState().sidebarOpen).toBe(true);
   });
 
   it("toggles preview visibility and reflects state in aria-pressed", async () => {

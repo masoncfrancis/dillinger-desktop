@@ -16,7 +16,6 @@ function resetStore() {
       currentDocument: null,
       editorInstance: null,
       settings: { ...initialState.settings },
-      sidebarOpen: true,
       settingsOpen: false,
       previewVisible: true,
       zenMode: false,

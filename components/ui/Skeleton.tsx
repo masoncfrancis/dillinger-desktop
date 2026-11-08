@@ -20,33 +20,6 @@ function Skeleton({ className }: SkeletonProps) {
 export function EditorSkeleton() {
   return (
     <div className="h-dvh flex overflow-hidden bg-bg-primary">
-      {/* Sidebar skeleton */}
-      <aside className="w-sidebar bg-bg-sidebar h-dvh flex flex-col p-4">
-        {/* Logo */}
-        <Skeleton className="h-8 w-32 mb-6" />
-
-        {/* Nav sections */}
-        <div className="space-y-4">
-          <Skeleton className="h-6 w-24" />
-          <div className="ml-2 space-y-2">
-            <Skeleton className="h-5 w-20" />
-            <Skeleton className="h-5 w-20" />
-          </div>
-        </div>
-
-        <div className="space-y-4 mt-4">
-          <Skeleton className="h-6 w-28" />
-          <Skeleton className="h-6 w-20" />
-          <Skeleton className="h-6 w-24" />
-        </div>
-
-        {/* Bottom buttons */}
-        <div className="mt-auto space-y-2">
-          <Skeleton className="h-10 w-full" />
-          <Skeleton className="h-10 w-full" />
-        </div>
-      </aside>
-
       {/* Main content skeleton */}
       <main className="flex-1 flex flex-col min-w-0">
         {/* Navbar skeleton */}
@@ -57,6 +30,11 @@ export function EditorSkeleton() {
           <Skeleton className="h-6 w-6" />
           <Skeleton className="h-6 w-6" />
           <Skeleton className="h-6 w-6" />
+        </div>
+
+        {/* Document tabs skeleton */}
+        <div className="h-11 border-b border-border-light bg-bg-navbar px-4 flex items-center gap-2">
+          <Skeleton className="h-7 w-36" />
         </div>
 
         {/* Document title skeleton */}

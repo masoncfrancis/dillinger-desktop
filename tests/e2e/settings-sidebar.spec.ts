@@ -14,11 +14,7 @@ test("settings are available without persisted session state", async ({ page }) 
   await expect(page.evaluate(() => localStorage.length)).resolves.toBe(0);
 });
 
-test("sidebar exposes open files and creation only", async ({ page }) => {
-  await page.getByRole("button", { name: "Toggle sidebar" }).click();
-  const sidebar = page.locator("aside");
-  await expect(sidebar.getByText("Open files", { exact: true })).toBeVisible();
-  await expect(sidebar.getByRole("button", { name: "New Document" })).toBeVisible();
-  await expect(sidebar.getByRole("button", { name: "Delete Document" })).toHaveCount(0);
-  await expect(sidebar.getByText("Services", { exact: true })).toHaveCount(0);
+test("tabs expose open files without a sidebar", async ({ page }) => {
+  await expect(page.getByRole("tablist", { name: "Open files" })).toBeVisible();
+  await expect(page.locator("aside")).toHaveCount(0);
 });
