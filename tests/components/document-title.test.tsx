@@ -68,6 +68,21 @@ describe("DocumentTitle", () => {
     expect(screen.getByText("Untitled Document.md")).toBeVisible();
   });
 
+  it("shows that a document without a file path is not saved", () => {
+    seedDocument();
+    render(<DocumentTitle />);
+
+    expect(screen.getByText("Not saved")).toBeVisible();
+    expect(screen.getByText("Not saved").className).toContain("bg-amber-100");
+  });
+
+  it("shows saved status for a clean document with a file path", () => {
+    seedDocument(createDocument({ filePath: "/tmp/document.md" }));
+    render(<DocumentTitle />);
+
+    expect(screen.getByText("Saved")).toBeVisible();
+  });
+
   it("enters edit mode when the edit button is clicked", async () => {
     const user = userEvent.setup();
     seedDocument();

@@ -13,6 +13,8 @@ export function DocumentTitle() {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState("");
   const documentTitle = currentDocument?.title || DEFAULT_DOCUMENT_TITLE;
+  const isUntitled = !currentDocument?.filePath;
+  const statusLabel = isUntitled ? "Not saved" : isDirty ? "Unsaved" : "Saved";
 
   useEffect(() => {
     setTitle(currentDocument?.title || "");
@@ -84,9 +86,15 @@ export function DocumentTitle() {
           </h2>
           <span
             aria-live="polite"
-            className={`text-xs text-text-muted ml-2 transition-opacity duration-200 ${isDirty ? "" : "opacity-50"}`}
+            className={`ml-2 rounded-full border px-2 py-0.5 text-xs font-medium transition-colors duration-200 ${
+              isUntitled
+                ? "border-amber-300 bg-amber-100 text-amber-800"
+                : isDirty
+                  ? "border-plum/30 bg-plum/10 text-plum"
+                  : "border-transparent text-text-muted opacity-50"
+            }`}
           >
-            {isDirty ? "Unsaved" : "Saved"}
+            {statusLabel}
           </span>
           <button
             onClick={() => setIsEditing(true)}
