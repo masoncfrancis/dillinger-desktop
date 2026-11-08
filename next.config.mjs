@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   turbopack: {
     resolveAlias: {
       "monaco-editor/esm/vs/editor/editor.api":
