@@ -36,13 +36,11 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/dompurify": "^3.0.5",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^24",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitest/coverage-v8": "^4.1.2",
-    "breakdance": "^3.0.1",
     "clsx": "^2.1.1",
     "concurrently": "^9.2.1",
     "dompurify": "^3.4.17",
@@ -65,7 +63,6 @@
     "markdown-it-sup": "^2.0.0",
     "markdown-it-texmath": "^1.0.0",
     "markdown-it-toc": "^1.1.0",
-    "monaco-emacs": "^0.3.0",
     "monaco-vim": "^0.4.4",
     "next": "16.4.3",
     "postcss": "^8",
@@ -76,6 +73,7 @@
     "tailwindcss": "^3.4.1",
     "turndown": "^7.2.2",
     "typescript": "^5",
+    "vite": "^8.3.8",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.0.18",
     "wait-on": "^8.0.3",
@@ -142,8 +140,5 @@
         "role": "Editor"
       }
     ]
-  },
-  "dependencies": {
-    "vite": "^8.3.5"
   }
 }
