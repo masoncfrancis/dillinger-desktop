@@ -49,6 +49,6 @@ jobs:
       - name: Upload installer artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dillinger-${{ matrix.artifact }}
+          name: dillinger-desktop-${{ matrix.artifact }}
           path: release/*
           if-no-files-found: error

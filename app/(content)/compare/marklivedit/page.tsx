@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Dillinger vs MarkLiveEdit",
+  title: "Dillinger Desktop vs MarkLiveEdit",
   description:
-    "Compare Dillinger and MarkLiveEdit across local files, exports, and editor experience.",
+    "Compare Dillinger Desktop and MarkLiveEdit across local files, exports, and editor experience.",
   alternates: { canonical: "https://dillinger.io/compare/marklivedit" },
 };
 
@@ -34,10 +34,10 @@ export default function MarkLiveEditCompare() {
       <p className="text-plum font-medium text-sm uppercase tracking-wider mb-3">
         Comparison
       </p>
-      <h1 className="text-4xl font-bold mb-4">Dillinger vs MarkLiveEdit</h1>
+      <h1 className="text-4xl font-bold mb-4">Dillinger Desktop vs MarkLiveEdit</h1>
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
         MarkLiveEdit is a newer, lightweight web markdown editor with PDF and
-        Word export and built-in support for LaTeX and diagrams. Dillinger is a
+        Word export and built-in support for LaTeX and diagrams. Dillinger Desktop is a
         decade-old, production-trusted editor with the Monaco engine, broader
         native file saving, and a workflow built around multiple open documents.
       </p>
@@ -48,7 +48,7 @@ export default function MarkLiveEditCompare() {
             <tr className="border-b border-border-light">
               <th className="text-left py-3 pr-4 font-semibold">Feature</th>
               <th className="text-left py-3 px-4 font-semibold text-plum">
-                Dillinger
+                Dillinger Desktop
               </th>
               <th className="text-left py-3 pl-4 font-semibold">MarkLiveEdit</th>
             </tr>
@@ -66,7 +66,7 @@ export default function MarkLiveEditCompare() {
       </div>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger</h2>
+        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger Desktop</h2>
         <ul className="space-y-3 text-text-muted">
           <li>You want a tool that has been battle-tested in production for over a decade</li>
           <li>You need native local file saving and export</li>
@@ -90,7 +90,7 @@ export default function MarkLiveEditCompare() {
           href="/"
           className="inline-block bg-plum text-bg-sidebar px-6 py-3 rounded font-medium hover:opacity-90 transition-opacity"
         >
-          Try Dillinger Free
+          Try Dillinger Desktop Free
         </Link>
         <Link
           href="/compare"

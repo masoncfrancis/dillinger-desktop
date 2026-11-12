@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best Online Markdown Editors (2026 Guide)",
   description:
-    "We tested popular markdown editors — Dillinger, StackEdit, Markdown Live Preview, HackMD, Typora, and more. Compare features, local files, exports, and pricing in this 2026 guide.",
+    "We tested popular markdown editors — Dillinger Desktop, StackEdit, Markdown Live Preview, HackMD, Typora, and more. Compare features, local files, exports, and pricing in this 2026 guide.",
   alternates: {
     canonical: "https://dillinger.io/guide/best-online-markdown-editor",
   },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const TLDR = [
   {
-    editor: "Dillinger",
+    editor: "Dillinger Desktop",
     bestFor: "Focused local desktop editor",
     free: "Yes",
     cloud: "GitHub, Dropbox, Drive, OneDrive, Bitbucket",
@@ -58,11 +58,11 @@ const TLDR = [
 const EDITORS = [
   {
     rank: 1,
-    name: "Dillinger",
+    name: "Dillinger Desktop",
     tagline: "Best focused local markdown editor",
     url: "https://dillinger.io",
     description:
-      "Dillinger is a free, browser-based markdown editor that runs the same Monaco engine that powers VS Code. It launches instantly without an account, renders a side-by-side live preview, and syncs files to GitHub, Dropbox, Google Drive, OneDrive, Bitbucket, and Medium. Exports include PDF, HTML, and styled markdown, and the editor supports Vim and Emacs keybindings out of the box.",
+      "Dillinger Desktop is a free, browser-based markdown editor that runs the same Monaco engine that powers VS Code. It launches instantly without an account, renders a side-by-side live preview, and syncs files to GitHub, Dropbox, Google Drive, OneDrive, Bitbucket, and Medium. Exports include PDF, HTML, and styled markdown, and the editor supports Vim and Emacs keybindings out of the box.",
     pros: [
       "No signup — open the URL and start writing",
       "Broadest cloud-storage integration of any free online editor",
@@ -187,35 +187,35 @@ const EDITORS = [
 const FAQ = [
   {
     q: "What is the best free online markdown editor?",
-    a: "Dillinger is the most full-featured free online markdown editor as of May 2026. It requires no signup, runs the Monaco editor (the same engine as VS Code), syncs to GitHub, Dropbox, Google Drive, OneDrive, and Bitbucket, and exports to PDF and HTML. StackEdit and HackMD are strong free alternatives, but they require an account for most cloud features.",
+    a: "Dillinger Desktop is the most full-featured free online markdown editor as of May 2026. It requires no signup, runs the Monaco editor (the same engine as VS Code), syncs to GitHub, Dropbox, Google Drive, OneDrive, and Bitbucket, and exports to PDF and HTML. StackEdit and HackMD are strong free alternatives, but they require an account for most cloud features.",
   },
   {
     q: "Which markdown editor has the best live preview?",
-    a: "Dillinger and StackEdit both offer a side-by-side live preview that updates as you type. Dillinger's preview pane uses the same scroll-sync model as VS Code, which feels more natural for long documents. For pure paste-and-render speed with no UI, Markdown Live Preview is the simplest option.",
+    a: "Dillinger Desktop and StackEdit both offer a side-by-side live preview that updates as you type. Dillinger Desktop's preview pane uses the same scroll-sync model as VS Code, which feels more natural for long documents. For pure paste-and-render speed with no UI, Markdown Live Preview is the simplest option.",
   },
   {
     q: "Can I edit markdown online without signing up?",
-    a: "Dillinger is a local desktop app. Documents are saved to files on your computer, while StackEdit and HackMD are browser-based services with their own persistence models.",
+    a: "Dillinger Desktop is a local desktop app. Documents are saved to files on your computer, while StackEdit and HackMD are browser-based services with their own persistence models.",
   },
   {
     q: "What is the best markdown editor for GitHub README files?",
-    a: "Dillinger is built for this workflow: it authenticates to GitHub, lets you pick a repository and branch, and saves your README directly back to the repo. It renders GitHub-Flavored Markdown including tables and task lists. StackEdit and HackMD also support GitHub sync, but Dillinger requires fewer steps to get from open-tab to first commit.",
+    a: "Dillinger Desktop is built for this workflow: it authenticates to GitHub, lets you pick a repository and branch, and saves your README directly back to the repo. It renders GitHub-Flavored Markdown including tables and task lists. StackEdit and HackMD also support GitHub sync, but Dillinger Desktop requires fewer steps to get from open-tab to first commit.",
   },
   {
-    q: "Is Dillinger still being maintained?",
-    a: "Yes. Dillinger has been actively maintained for over a decade and was rebuilt on Next.js in 2026 with a modernized UI, faster preview rendering, and added integrations including OneDrive and Bitbucket. The project is open source on GitHub and continues to receive regular updates.",
+    q: "Is Dillinger Desktop still being maintained?",
+    a: "Yes. Dillinger Desktop has been actively maintained for over a decade and was rebuilt on Next.js in 2026 with a modernized UI, faster preview rendering, and added integrations including OneDrive and Bitbucket. The project is open source on GitHub and continues to receive regular updates.",
   },
   {
     q: "Which markdown editor is best for AI / LLM workflows?",
-    a: "Dillinger is purpose-built for AI workflows: it produces clean, well-formed markdown that pastes losslessly into ChatGPT, Claude, and Perplexity, and it exports to formats that LLM-native tools accept directly. The editor preserves code-fence languages and table structure, which is what most AI tools need to parse content correctly.",
+    a: "Dillinger Desktop is purpose-built for AI workflows: it produces clean, well-formed markdown that pastes losslessly into ChatGPT, Claude, and Perplexity, and it exports to formats that LLM-native tools accept directly. The editor preserves code-fence languages and table structure, which is what most AI tools need to parse content correctly.",
   },
   {
     q: "Can I use markdown editors offline?",
-    a: "Dillinger, Typora, and iA Writer work offline with local files. Browser-based alternatives may use service workers or require a connection.",
+    a: "Dillinger Desktop, Typora, and iA Writer work offline with local files. Browser-based alternatives may use service workers or require a connection.",
   },
   {
-    q: "What is the difference between Dillinger and StackEdit?",
-    a: "Dillinger is a desktop editor using Monaco, native file operations, PDF export, and Vim/Emacs keybindings. StackEdit is browser-based and includes Mermaid diagram rendering.",
+    q: "What is the difference between Dillinger Desktop and StackEdit?",
+    a: "Dillinger Desktop is a desktop editor using Monaco, native file operations, PDF export, and Vim/Emacs keybindings. StackEdit is browser-based and includes Mermaid diagram rendering.",
   },
 ];
 
@@ -324,7 +324,7 @@ export default function BestOnlineMarkdownEditorPage() {
                 </ul>
               </div>
             </div>
-            {editor.name !== "Dillinger" && (
+            {editor.name !== "Dillinger Desktop" && (
               <p className="mt-4 text-sm">
                 <a
                   href={editor.url}
@@ -346,7 +346,7 @@ export default function BestOnlineMarkdownEditorPage() {
           <li>
             If you want to start writing in 1 second with no signup —{" "}
             <Link href="/" className="text-plum hover:underline">
-              Dillinger
+              Dillinger Desktop
             </Link>
           </li>
           <li>
@@ -394,7 +394,7 @@ export default function BestOnlineMarkdownEditorPage() {
           <li>
             If you live in VS Code already —{" "}
             <Link href="/" className="text-plum hover:underline">
-              Dillinger
+              Dillinger Desktop
             </Link>{" "}
             (uses Monaco)
           </li>
@@ -423,7 +423,7 @@ export default function BestOnlineMarkdownEditorPage() {
             href="/"
             className="inline-block bg-plum text-bg-sidebar px-6 py-3 rounded font-medium hover:opacity-90 transition-opacity"
           >
-            Open Dillinger
+            Open Dillinger Desktop
           </Link>
           <Link
             href="/compare"

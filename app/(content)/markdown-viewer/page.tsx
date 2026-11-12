@@ -12,17 +12,17 @@ const FAQ = [
   {
     question: "How do I open a .md file in a browser?",
     answer:
-      "Open Dillinger, then drag your .md file onto the editor pane or paste its contents. The rendered output appears instantly in the live preview pane next to it. There is nothing to install — it runs entirely in your browser.",
+      "Open Dillinger Desktop, then drag your .md file onto the editor pane or paste its contents. The rendered output appears instantly in the live preview pane next to it. There is nothing to install — it runs entirely in your browser.",
   },
   {
     question: "Is the Markdown viewer free?",
     answer:
-      "Yes. Dillinger is a completely free online Markdown viewer and editor. There is no signup, no account, and no paywall. Open it, view your file, and close the tab when you are done.",
+      "Yes. Dillinger Desktop is a completely free online Markdown viewer and editor. There is no signup, no account, and no paywall. Open it, view your file, and close the tab when you are done.",
   },
   {
     question: "Does it support GitHub-flavored Markdown?",
     answer:
-      "Yes. Dillinger renders GitHub-flavored Markdown (GFM), including tables, task lists, fenced code blocks with syntax highlighting, strikethrough, and autolinks, so README files and docs look the way they do on GitHub.",
+      "Yes. Dillinger Desktop renders GitHub-flavored Markdown (GFM), including tables, task lists, fenced code blocks with syntax highlighting, strikethrough, and autolinks, so README files and docs look the way they do on GitHub.",
   },
   {
     question: "Can I view the rendered HTML or export it?",
@@ -37,7 +37,7 @@ const FAQ = [
   {
     question: "Do I need to install anything to render Markdown?",
     answer:
-      "No installation is required. Dillinger is a web app — open the page in any modern browser and you have a full Markdown renderer with live preview ready to use.",
+      "No installation is required. Dillinger Desktop is a web app — open the page in any modern browser and you have a full Markdown renderer with live preview ready to use.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function MarkdownViewerPage() {
             file shows hash symbols, asterisks, and pipe characters instead of
             formatted headings, bold text, and tables. A Markdown viewer parses
             that syntax and renders it the way it is meant to be read. Open
-            Dillinger, drag your file onto the editor, and the right-hand preview
+            Dillinger Desktop, drag your file onto the editor, and the right-hand preview
             pane renders the document — headings become headings, lists become
             lists, and code blocks gain syntax highlighting.
           </p>
@@ -138,7 +138,7 @@ npm install dillinger
           </h2>
           <p className="text-text-muted mb-4">
             Most Markdown you encounter in the wild is GitHub-flavored Markdown
-            (GFM), and Dillinger renders it faithfully. That means tables with
+            (GFM), and Dillinger Desktop renders it faithfully. That means tables with
             aligned columns, task lists with checkable boxes, fenced code blocks
             with language-aware syntax highlighting, strikethrough, autolinked
             URLs, and footnotes all display correctly. If a README looks right on
@@ -152,7 +152,7 @@ npm install dillinger
             Live preview that updates as you type
           </h2>
           <p className="text-text-muted mb-4">
-            Dillinger is more than a static renderer. The editor and preview sit
+            Dillinger Desktop is more than a static renderer. The editor and preview sit
             side by side, and the rendered output updates in real time as you
             type or edit. View a file first, then fix a typo, restructure a list,
             or tweak a heading and watch the formatted result change immediately.
@@ -168,7 +168,7 @@ npm install dillinger
           <p className="text-text-muted mb-4">
             Viewing is only the first step. Once your document is rendered you
             can export it as clean HTML or as a PDF, or open your browser&apos;s
-            print dialog to save the styled preview. This makes Dillinger useful
+            print dialog to save the styled preview. This makes Dillinger Desktop useful
             for turning a raw{" "}
             <code className="bg-bg-highlight text-icon-default rounded px-1.5 py-0.5 text-sm font-mono">
               .md
@@ -184,7 +184,7 @@ npm install dillinger
           </h2>
           <p className="text-text-muted">
             You do not need to install an editor, add a browser extension, or
-            create an account to read a Markdown file. Dillinger is a web app —
+            create an account to read a Markdown file. Dillinger Desktop is a web app —
             open the page, render your content, and you are done. Rendering
             happens locally in your browser, so a document you simply view never
             has to leave your machine.

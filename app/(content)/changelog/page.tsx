@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Changelog",
   description:
-    "See what is new in Dillinger. Release notes, feature updates, and improvements to the online markdown editor.",
+    "See what is new in Dillinger Desktop. Release notes, feature updates, and improvements to the online markdown editor.",
   alternates: { canonical: "https://dillinger.io/changelog" },
 };
 
@@ -85,7 +85,7 @@ export default function ChangelogPage() {
     <div className="max-w-4xl mx-auto px-6 py-16">
       <h1 className="text-4xl font-bold mb-4">Changelog</h1>
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
-        What is new in Dillinger. All notable changes, features, and fixes.
+        What is new in Dillinger Desktop. All notable changes, features, and fixes.
       </p>
 
       <div className="space-y-12">
@@ -113,7 +113,7 @@ export default function ChangelogPage() {
 
       <div className="mt-12 pt-8 border-t border-border-light text-center">
         <p className="text-text-muted mb-4">
-          Dillinger is open source and actively maintained.
+          Dillinger Desktop is open source and actively maintained.
         </p>
         <div className="flex gap-4 justify-center">
           <Link

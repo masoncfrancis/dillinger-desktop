@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Dillinger vs Typora",
+  title: "Dillinger Desktop vs Typora",
   description:
-    "Compare Dillinger, a focused local Markdown editor, and Typora, a desktop WYSIWYG editor.",
+    "Compare Dillinger Desktop, a focused local Markdown editor, and Typora, a desktop WYSIWYG editor.",
   alternates: { canonical: "https://dillinger.io/compare/typora" },
 };
 
@@ -34,10 +34,10 @@ export default function TyporaCompare() {
       <p className="text-plum font-medium text-sm uppercase tracking-wider mb-3">
         Comparison
       </p>
-      <h1 className="text-4xl font-bold mb-4">Dillinger vs Typora</h1>
+      <h1 className="text-4xl font-bold mb-4">Dillinger Desktop vs Typora</h1>
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
         Typora is the most polished desktop markdown experience — a paid native
-        app with seamless WYSIWYG editing. Dillinger is the most polished
+        app with seamless WYSIWYG editing. Dillinger Desktop is the most polished
         web-based markdown experience — free, no install, with built-in cloud
         sync. Many writers use both.
       </p>
@@ -48,7 +48,7 @@ export default function TyporaCompare() {
             <tr className="border-b border-border-light">
               <th className="text-left py-3 pr-4 font-semibold">Feature</th>
               <th className="text-left py-3 px-4 font-semibold text-plum">
-                Dillinger
+                Dillinger Desktop
               </th>
               <th className="text-left py-3 pl-4 font-semibold">Typora</th>
             </tr>
@@ -66,7 +66,7 @@ export default function TyporaCompare() {
       </div>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger</h2>
+        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger Desktop</h2>
         <ul className="space-y-3 text-text-muted">
           <li>You want to start writing immediately in the browser — no install, no purchase</li>
           <li>You sync files between devices through GitHub, Dropbox, Google Drive, OneDrive, or Bitbucket</li>
@@ -92,7 +92,7 @@ export default function TyporaCompare() {
           href="/"
           className="inline-block bg-plum text-bg-sidebar px-6 py-3 rounded font-medium hover:opacity-90 transition-opacity"
         >
-          Try Dillinger Free
+          Try Dillinger Desktop Free
         </Link>
         <Link
           href="/compare"

@@ -1,7 +1,7 @@
 {
   "name": "@dillinger/cli",
   "version": "0.1.0",
-  "description": "Command-line interface for Dillinger markdown editor",
+  "description": "Command-line interface for Dillinger Desktop markdown editor",
   "engines": {
     "node": ">=24"
   },

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Compare Markdown Editors",
   description:
-    "See how Dillinger compares to other online markdown editors like StackEdit and HackMD. Feature comparison, pricing, and workflow analysis.",
+    "See how Dillinger Desktop compares to other online markdown editors like StackEdit and HackMD. Feature comparison, pricing, and workflow analysis.",
   alternates: { canonical: "https://dillinger.io/compare" },
 };
 
@@ -12,27 +12,27 @@ const COMPETITORS = [
   {
     name: "StackEdit",
     slug: "stackedit",
-    tagline: "Dillinger is a focused local desktop editor, while StackEdit is browser-based.",
+    tagline: "Dillinger Desktop is a focused local desktop editor, while StackEdit is browser-based.",
   },
   {
     name: "HackMD",
     slug: "hackmd",
-    tagline: "HackMD focuses on real-time collaboration. Dillinger focuses on individual productivity with zero friction.",
+    tagline: "HackMD focuses on real-time collaboration. Dillinger Desktop focuses on individual productivity with zero friction.",
   },
   {
     name: "Markdown Live Preview",
     slug: "markdownlivepreview",
-    tagline: "Markdown Live Preview is a minimal scratchpad. Dillinger adds native files and the Monaco editor for real workflows.",
+    tagline: "Markdown Live Preview is a minimal scratchpad. Dillinger Desktop adds native files and the Monaco editor for real workflows.",
   },
   {
     name: "Typora",
     slug: "typora",
-    tagline: "Typora is a paid desktop WYSIWYG editor. Dillinger is a focused desktop Markdown editor with native file operations.",
+    tagline: "Typora is a paid desktop WYSIWYG editor. Dillinger Desktop is a focused desktop Markdown editor with native file operations.",
   },
   {
     name: "MarkLiveEdit",
     slug: "marklivedit",
-    tagline: "MarkLiveEdit is a newer lightweight tool. Dillinger combines native files with Monaco-powered editing.",
+    tagline: "MarkLiveEdit is a newer lightweight tool. Dillinger Desktop combines native files with Monaco-powered editing.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function ComparePage() {
       <h1 className="text-4xl font-bold mb-4">Compare Markdown Editors</h1>
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
         Choosing a markdown editor depends on your workflow. Here is how
-        Dillinger compares to popular alternatives.
+        Dillinger Desktop compares to popular alternatives.
       </p>
 
       <div className="space-y-6">
@@ -53,7 +53,7 @@ export default function ComparePage() {
             className="block border border-border-light rounded-lg p-6 hover:border-plum transition-colors"
           >
             <h2 className="text-xl font-semibold mb-2">
-              Dillinger vs {comp.name}
+              Dillinger Desktop vs {comp.name}
             </h2>
             <p className="text-text-muted">{comp.tagline}</p>
           </Link>
@@ -62,7 +62,7 @@ export default function ComparePage() {
 
       <div className="mt-16 pt-8 border-t border-border-light text-center">
         <p className="text-text-muted mb-4">
-          Ready to try Dillinger? No signup required.
+          Ready to try Dillinger Desktop? No signup required.
         </p>
         <Link
           href="/"

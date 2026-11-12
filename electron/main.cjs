@@ -113,7 +113,7 @@ ipcMain.handle("file:write", async (_event, request) => {
     expectedModifiedAt !== undefined &&
     (typeof expectedModifiedAt !== "number" || stats.mtimeMs !== expectedModifiedAt)
   ) {
-    const error = new Error("The file changed outside Dillinger");
+    const error = new Error("The file changed outside Dillinger Desktop");
     error.code = "FILE_CHANGED";
     throw error;
   }
@@ -187,7 +187,7 @@ ipcMain.handle("app:confirm-unsaved-changes", async () => {
     cancelId: 2,
     title: "Unsaved changes",
     message: "This document has unsaved changes.",
-    detail: "Would you like to save your changes before closing Dillinger?",
+    detail: "Would you like to save your changes before closing Dillinger Desktop?",
   });
 
   return result.response;
@@ -274,7 +274,7 @@ async function createWindow() {
     height: 900,
     minWidth: 900,
     minHeight: 600,
-    title: "Dillinger",
+    title: "Dillinger Desktop",
     backgroundColor: "#ffffff",
     autoHideMenuBar: process.platform === "win32",
     show: false,
@@ -355,7 +355,7 @@ function createApplicationMenu() {
       label: "Help",
       submenu: [
         { label: "Keyboard Shortcuts", click: () => send("shortcuts") },
-        { label: "About Dillinger", click: () => send("about") },
+        { label: "About Dillinger Desktop", click: () => send("about") },
       ],
     },
   ];

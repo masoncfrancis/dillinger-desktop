@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-     "Dillinger's privacy policy. Documents are handled locally and saved to files on your computer.",
+     "Dillinger Desktop's privacy policy. Documents are handled locally and saved to files on your computer.",
   alternates: { canonical: "https://dillinger.io/privacy" },
 };
 
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-text-primary">The short version</h2>
           <p>
-             Dillinger is a local desktop markdown editor. Your documents are saved
+             Dillinger Desktop is a local desktop markdown editor. Your documents are saved
              directly to files on your computer. We do not sell your data.
           </p>
         </section>
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
           </p>
           <p>
              <strong className="text-text-primary">On our servers:</strong> nothing
-             tied to your identity. Dillinger has no account or cloud-storage
+             tied to your identity. Dillinger Desktop has no account or cloud-storage
              system and does not persist your document contents.
           </p>
         </section>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-text-primary">Analytics and ads</h2>
           <p>
             We use privacy-respecting analytics to understand aggregate usage of
-            the site (page views, traffic sources). Dillinger may also display a
+            the site (page views, traffic sources). Dillinger Desktop may also display a
             single Carbon ad on the landing page; Carbon serves a contextual ad
             based on the page itself, not on your personal profile.
           </p>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-text-primary">Children</h2>
           <p>
-            Dillinger is a general-audience tool and is not directed at children
+            Dillinger Desktop is a general-audience tool and is not directed at children
             under 13.
           </p>
         </section>

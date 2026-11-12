@@ -1,6 +1,6 @@
 {
-  "name": "Dillinger",
-  "short_name": "Dillinger",
+  "name": "Dillinger Desktop",
+  "short_name": "Dillinger Desktop",
   "description": "The last Markdown editor you'll ever need",
   "start_url": "/",
   "display": "standalone",

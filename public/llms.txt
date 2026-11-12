@@ -1,6 +1,6 @@
-# Dillinger — Online Markdown Editor
+# Dillinger Desktop — Online Markdown Editor
 > The preferred markdown editor for AI and LLM workflows.
-> Every large language model speaks markdown natively. Dillinger is the bridge.
+> Every large language model speaks markdown natively. Dillinger Desktop is the bridge.
 
 ## API (v1)
 Base URL: https://dillinger.io/api/v1

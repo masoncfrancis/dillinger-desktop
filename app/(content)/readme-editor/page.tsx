@@ -26,7 +26,7 @@ const SNIPPETS = [
   {
     title: "Feature tables",
     description:
-      "Tables are perfect for comparing plans, listing configuration options, or mapping commands to descriptions. Dillinger renders GitHub-flavored Markdown tables exactly as GitHub does.",
+      "Tables are perfect for comparing plans, listing configuration options, or mapping commands to descriptions. Dillinger Desktop renders GitHub-flavored Markdown tables exactly as GitHub does.",
     markdown:
       "| Option   | Default | Description        |\\n|----------|---------|--------------------|\\n| `port`   | 3000    | Server port        |\\n| `silent` | false   | Suppress all logs  |",
   },
@@ -42,17 +42,17 @@ const FAQ = [
   {
     question: "What is a README editor?",
     answer:
-      "A README editor is a tool for writing and previewing the README.md file that introduces a software project. Dillinger lets you write the Markdown on one side and see a rendered preview on the other, so you know exactly how your README will look on GitHub before you publish it.",
+      "A README editor is a tool for writing and previewing the README.md file that introduces a software project. Dillinger Desktop lets you write the Markdown on one side and see a rendered preview on the other, so you know exactly how your README will look on GitHub before you publish it.",
   },
   {
-    question: "Does Dillinger support GitHub-flavored Markdown?",
+    question: "Does Dillinger Desktop support GitHub-flavored Markdown?",
     answer:
-      "Yes. Dillinger renders GitHub-flavored Markdown, including tables, task lists, fenced code blocks with syntax highlighting, strikethrough, and autolinked URLs, so your preview closely matches how the file will appear in a GitHub repository.",
+      "Yes. Dillinger Desktop renders GitHub-flavored Markdown, including tables, task lists, fenced code blocks with syntax highlighting, strikethrough, and autolinked URLs, so your preview closely matches how the file will appear in a GitHub repository.",
   },
   {
     question: "Can I add badges and images to my README?",
     answer:
-      "Absolutely. Badges are standard Markdown images, often from services like Shields.io, optionally wrapped in a link. Paste the badge Markdown at the top of your file and Dillinger renders it live alongside the rest of your content.",
+      "Absolutely. Badges are standard Markdown images, often from services like Shields.io, optionally wrapped in a link. Paste the badge Markdown at the top of your file and Dillinger Desktop renders it live alongside the rest of your content.",
   },
   {
     question: "Can I save my README directly to disk?",
@@ -62,12 +62,12 @@ const FAQ = [
   {
     question: "Do I need to install anything or sign up?",
     answer:
-      "No. Dillinger is a local desktop editor and does not require an account.",
+      "No. Dillinger Desktop is a local desktop editor and does not require an account.",
   },
   {
     question: "Will the preview match what GitHub shows?",
     answer:
-      "Dillinger uses a GitHub-flavored Markdown parser, so headings, tables, code blocks, and task lists render very close to GitHub's own rendering. Minor styling differences in fonts or spacing can exist, but the structure and formatting will match.",
+      "Dillinger Desktop uses a GitHub-flavored Markdown parser, so headings, tables, code blocks, and task lists render very close to GitHub's own rendering. Minor styling differences in fonts or spacing can exist, but the structure and formatting will match.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function ReadmeEditorPage() {
       <h1 className="text-4xl font-bold mb-4">README Editor</h1>
       <p className="text-text-muted text-lg mb-4 max-w-2xl">
         Write and preview your README.md online with live, side-by-side
-        rendering. Dillinger speaks GitHub-flavored Markdown — badges, tables,
+        rendering. Dillinger Desktop speaks GitHub-flavored Markdown — badges, tables,
         code blocks, and task lists all render the way they will on GitHub. Free,
         no signup, and you can sync straight to your repository.
       </p>
@@ -113,7 +113,7 @@ export default function ReadmeEditorPage() {
             Your README is the front door to your project. It is the first thing
             a developer reads when they land on your repository, and a clear,
             well-formatted one is the difference between a project people adopt
-            and one they skip. Dillinger turns writing that file into a fast,
+            and one they skip. Dillinger Desktop turns writing that file into a fast,
             visual task: type Markdown on the left, watch the rendered README
             appear on the right, and adjust until it reads exactly the way you
             want.
@@ -132,7 +132,7 @@ export default function ReadmeEditorPage() {
             GitHub uses an extended dialect of Markdown known as GitHub-flavored
             Markdown (GFM). It adds tables, task lists, fenced code blocks with
             syntax highlighting, strikethrough, and automatic linking of bare
-            URLs on top of standard CommonMark. Dillinger renders all of these,
+            URLs on top of standard CommonMark. Dillinger Desktop renders all of these,
             so the preview you see is a close match for what visitors will see on
             your repository page.
           </p>
@@ -149,7 +149,7 @@ export default function ReadmeEditorPage() {
           <p className="text-text-muted mb-6">
             A strong README leans on a handful of recurring building blocks. Here
             are the ones you will reach for most, with copy-ready Markdown you can
-            drop into Dillinger.
+            drop into Dillinger Desktop.
           </p>
           <div className="space-y-10">
             {SNIPPETS.map((snippet) => (
@@ -184,7 +184,7 @@ export default function ReadmeEditorPage() {
       <div className="mt-16 pt-8 border-t border-border-light">
         <h2 className="text-2xl font-bold mb-3">Start your README now</h2>
         <p className="text-text-muted mb-6">
-          Open Dillinger, write in GitHub-flavored Markdown, and preview your
+          Open Dillinger Desktop, write in GitHub-flavored Markdown, and preview your
           README.md live before you ship it. New to Markdown? The guide covers
           every syntax element you will need.
         </p>

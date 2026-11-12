@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
-export const alt = "Dillinger - Online Markdown Editor";
+export const alt = "Dillinger Desktop - Online Markdown Editor";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,7 +29,7 @@ export default function Image() {
             marginBottom: 24,
           }}
         >
-          DILLINGER
+          DILLINGER DESKTOP
         </div>
         <div
           style={{

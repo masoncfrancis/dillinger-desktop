@@ -15,7 +15,7 @@ export default function ContentLayout({
           href="/"
           className="text-plum font-bold text-xl tracking-wide hover:opacity-80 transition-opacity"
         >
-          DILLINGER
+          DILLINGER DESKTOP
         </Link>
         <nav className="ml-auto flex items-center gap-6 text-sm text-text-invert">
           <Link href="/features" className="hover:text-plum transition-colors">
@@ -43,7 +43,7 @@ export default function ContentLayout({
 
       <footer className="bg-bg-navbar text-text-muted text-sm py-8 px-6">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>Dillinger — The last Markdown editor you will ever need.</span>
+          <span>Dillinger Desktop — The last Markdown editor you will ever need.</span>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-text-invert transition-colors">
               Privacy

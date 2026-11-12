@@ -1,7 +1,7 @@
 {
   "name": "@dillinger/mcp",
   "version": "0.1.0",
-  "description": "MCP server for Dillinger - use the markdown editor as an LLM tool",
+  "description": "MCP server for Dillinger Desktop - use the markdown editor as an LLM tool",
   "engines": {
     "node": ">=24"
   },

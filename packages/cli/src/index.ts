@@ -90,7 +90,7 @@ async function convert(filePath?: string) {
 }
 
 function printUsage() {
-  console.log(`dlg - Dillinger CLI
+  console.log(`dlg - Dillinger Desktop CLI
 
 Usage:
   dlg render <file.md>              Render markdown to HTML
