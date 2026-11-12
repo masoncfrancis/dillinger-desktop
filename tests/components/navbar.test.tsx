@@ -232,6 +232,44 @@ describe("Navbar", () => {
     expect(useStore.getState().currentDocument?.title).toBe("renamed.md");
   });
 
+  it("confirms window close after choosing Don't Save", async () => {
+    const confirmUnsavedChanges = vi.fn().mockResolvedValue(1);
+    const confirmClose = vi.fn().mockResolvedValue(undefined);
+    let requestClose: (() => void) | undefined;
+
+    Object.defineProperty(window, "dillingerDesktop", {
+      configurable: true,
+      value: {
+        isDesktop: true,
+        platform: "darwin",
+        openFile: vi.fn(),
+        saveFile: vi.fn(),
+        writeFile: vi.fn(),
+        printPdf: vi.fn(),
+        confirmUnsavedChanges,
+        confirmClose,
+        quit: vi.fn(),
+        onMenuAction: vi.fn(() => vi.fn()),
+        onRequestClose: vi.fn((callback: () => void) => {
+          requestClose = callback;
+          return vi.fn();
+        }),
+      },
+    });
+    useStore.setState({
+      isDirty: true,
+      currentDocument: { ...useStore.getState().currentDocument!, isDirty: true },
+    });
+
+    render(<Navbar />);
+    requestClose?.();
+
+    await waitFor(() => {
+      expect(confirmUnsavedChanges).toHaveBeenCalledOnce();
+      expect(confirmClose).toHaveBeenCalledWith(true);
+    });
+  });
+
   describe("handleExport", () => {
     function mockFetchSuccess(contentType = "application/octet-stream", filename?: string) {
       const headers = new Headers({ "Content-Type": contentType });

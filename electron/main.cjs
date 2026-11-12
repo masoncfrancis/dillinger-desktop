@@ -201,7 +201,9 @@ ipcMain.handle("app:confirm-close", (_event, shouldClose) => {
   closeInProgress = false;
   if (shouldClose && mainWindow && !mainWindow.isDestroyed()) {
     closeRequested = true;
-    mainWindow.close();
+    // The original close event was prevented while waiting for the renderer.
+    // Destroying the window avoids re-entering that intercepted close path.
+    mainWindow.destroy();
   }
 });
 
