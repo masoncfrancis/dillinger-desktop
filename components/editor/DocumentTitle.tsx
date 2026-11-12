@@ -23,7 +23,7 @@ export function DocumentTitle() {
   useEffect(() => {
     if (typeof document === "undefined") return;
 
-    document.title = `${isDirty ? "• " : ""}${documentTitle} - Dillinger`;
+    document.title = `${isDirty ? "• " : ""}${documentTitle} - Dillinger Desktop`;
   }, [documentTitle, isDirty]);
 
   const inputRef = useCallback((node: HTMLInputElement | null) => {

@@ -1,6 +1,6 @@
 # @dillinger/mcp
 
-MCP (Model Context Protocol) server for Dillinger. Lets LLMs use Dillinger as a native markdown tool.
+MCP (Model Context Protocol) server for Dillinger Desktop. Lets LLMs use Dillinger Desktop as a native markdown tool.
 
 ## Setup
 

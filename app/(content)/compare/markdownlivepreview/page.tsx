@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Dillinger vs Markdown Live Preview",
+  title: "Dillinger Desktop vs Markdown Live Preview",
   description:
-    "Compare Dillinger and Markdown Live Preview across local files, persistence, and exports.",
+    "Compare Dillinger Desktop and Markdown Live Preview across local files, persistence, and exports.",
   alternates: { canonical: "https://dillinger.io/compare/markdownlivepreview" },
 };
 
@@ -34,10 +34,10 @@ export default function MarkdownLivePreviewCompare() {
       <p className="text-plum font-medium text-sm uppercase tracking-wider mb-3">
         Comparison
       </p>
-      <h1 className="text-4xl font-bold mb-4">Dillinger vs Markdown Live Preview</h1>
+      <h1 className="text-4xl font-bold mb-4">Dillinger Desktop vs Markdown Live Preview</h1>
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
         Markdown Live Preview is a minimal, open-source scratchpad for rendering
-        a single piece of markdown in your browser. Dillinger is a full
+        a single piece of markdown in your browser. Dillinger Desktop is a full
         workflow editor with native file saving, multiple open documents, and the Monaco
         editor from VS Code.
       </p>
@@ -48,7 +48,7 @@ export default function MarkdownLivePreviewCompare() {
             <tr className="border-b border-border-light">
               <th className="text-left py-3 pr-4 font-semibold">Feature</th>
               <th className="text-left py-3 px-4 font-semibold text-plum">
-                Dillinger
+                Dillinger Desktop
               </th>
               <th className="text-left py-3 pl-4 font-semibold">Markdown Live Preview</th>
             </tr>
@@ -66,7 +66,7 @@ export default function MarkdownLivePreviewCompare() {
       </div>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger</h2>
+        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger Desktop</h2>
         <ul className="space-y-3 text-text-muted">
           <li>You manage more than one document and need persistence between sessions</li>
           <li>You need native local file saving and export</li>
@@ -90,7 +90,7 @@ export default function MarkdownLivePreviewCompare() {
           href="/"
           className="inline-block bg-plum text-bg-sidebar px-6 py-3 rounded font-medium hover:opacity-90 transition-opacity"
         >
-          Try Dillinger Free
+          Try Dillinger Desktop Free
         </Link>
         <Link
           href="/compare"

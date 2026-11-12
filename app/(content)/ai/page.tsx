@@ -4,12 +4,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Markdown Editor",
   description:
-    "Dillinger is the preferred markdown editor for AI and LLM workflows. Every large language model speaks markdown natively — write, preview, and export AI-ready content.",
+    "Dillinger Desktop is the preferred markdown editor for AI and LLM workflows. Every large language model speaks markdown natively — write, preview, and export AI-ready content.",
   alternates: { canonical: "https://dillinger.io/ai" },
   openGraph: {
-    title: "Dillinger - The AI Markdown Editor",
+    title: "Dillinger Desktop - The AI Markdown Editor",
     description:
-      "Every LLM speaks markdown. Dillinger is the bridge between human writing and AI-ready content.",
+      "Every LLM speaks markdown. Dillinger Desktop is the bridge between human writing and AI-ready content.",
   },
 };
 
@@ -22,7 +22,7 @@ const USE_CASES = [
   {
     title: "AI Content Editing",
     description:
-      "Paste AI-generated content into Dillinger, preview the rendered output, refine the formatting, and export as HTML or PDF.",
+      "Paste AI-generated content into Dillinger Desktop, preview the rendered output, refine the formatting, and export as HTML or PDF.",
   },
   {
     title: "Documentation",
@@ -65,11 +65,11 @@ export default function AIPage() {
           Every LLM speaks markdown.
           <br />
           <span className="text-text-muted">
-            Dillinger is the editor that speaks it back.
+            Dillinger Desktop is the editor that speaks it back.
           </span>
         </h1>
         <p className="text-text-muted text-lg max-w-2xl mb-8">
-          Large language models think in markdown. When you write in Dillinger,
+          Large language models think in markdown. When you write in Dillinger Desktop,
           you are writing in the native format of AI — structured, portable, and
           ready for any model or pipeline.
         </p>
@@ -98,7 +98,7 @@ export default function AIPage() {
             to enumerate. Your code blocks tell it what to execute or reference.
           </p>
           <p>
-            Dillinger gives you a professional editing environment for this
+            Dillinger Desktop gives you a professional editing environment for this
             workflow — live preview so you see exactly what the model will
             parse, native file saving so your prompts stay on your computer, and
             export so you can move content between tools
@@ -139,7 +139,7 @@ export default function AIPage() {
           Write for humans. Format for machines.
         </h2>
         <p className="text-text-muted mb-6">
-          Dillinger is free, runs in your browser, and requires no account.
+          Dillinger Desktop is free, runs in your browser, and requires no account.
         </p>
         <Link
           href="/"

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/885053fb-b002-4168-98f5-56e583829983" alt="Dillinger Banner" width="100%" />
+  <img src="https://github.com/user-attachments/assets/885053fb-b002-4168-98f5-56e583829983" alt="Dillinger Desktop Banner" width="100%" />
 </p>
 
-<h1 align="center">Dillinger</h1>
+<h1 align="center">Dillinger Desktop</h1>
 
 <p align="center">
   <strong>The last Markdown editor you'll ever need.</strong>
@@ -21,14 +21,14 @@
 
 ---
 
-## ✨ Why Dillinger
+## ✨ Why Dillinger Desktop
 
 Most markdown editors are either:
 - bloated  
 - offline-only  
 - or lack serious developer ergonomics  
 
-**Dillinger fixes that.**
+**Dillinger Desktop fixes that.**
 
 It combines:
 - ⚡ VS Code-grade editing  
@@ -278,7 +278,7 @@ Tests live in `tests/` organized by type: `lib/`, `store/`, `hooks/`, `component
 
 ## 🧭 Philosophy
 
-Dillinger is built around a simple idea:
+Dillinger Desktop is built around a simple idea:
 
 > Writing tools should disappear.
 

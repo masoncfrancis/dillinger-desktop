@@ -282,7 +282,7 @@ export function Navbar() {
         toggleShortcuts();
         break;
       case "about":
-        notify("Dillinger desktop editor");
+        notify("Dillinger Desktop editor");
         break;
       case "quit":
         void handleCloseRequest(true);
@@ -346,7 +346,7 @@ export function Navbar() {
       {/* Left side */}
       <div className="flex items-center gap-4">
         <span className="text-plum font-bold text-xl tracking-wide hidden sm:block">
-          DILLINGER
+          DILLINGER DESKTOP
         </span>
       </div>
 

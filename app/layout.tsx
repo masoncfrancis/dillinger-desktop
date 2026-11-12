@@ -10,18 +10,18 @@ const sourceSans = Source_Sans_3({
 
 export const metadata: Metadata = {
   title: {
-    default: "Dillinger — Local Markdown Editor",
-    template: "%s | Dillinger",
+    default: "Dillinger Desktop — Local Markdown Editor",
+    template: "%s | Dillinger Desktop",
   },
   description:
     "A focused desktop Markdown editor with live preview, native file saving, and local exports.",
   metadataBase: new URL("https://dillinger.io"),
   openGraph: {
-    title: "Dillinger - Online Markdown Editor",
+    title: "Dillinger Desktop - Online Markdown Editor",
     description:
       "A focused local Markdown editor with live preview and native file saving.",
     url: "https://dillinger.io",
-    siteName: "Dillinger",
+    siteName: "Dillinger Desktop",
     type: "website",
     locale: "en_US",
     images: [
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Dillinger - Online Markdown Editor with live preview",
+        alt: "Dillinger Desktop - Online Markdown Editor with live preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dillinger - Online Markdown Editor",
+    title: "Dillinger Desktop - Online Markdown Editor",
     description:
       "Local Markdown editor with live preview and native file saving.",
     images: ["/og-image.png"],
@@ -75,7 +75,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              name: "Dillinger",
+              name: "Dillinger Desktop",
               url: "https://dillinger.io",
               description:
                 "Focused desktop markdown editor with live preview and local file saving.",

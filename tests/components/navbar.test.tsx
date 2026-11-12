@@ -56,7 +56,7 @@ describe("Navbar", () => {
   it("renders logo and action buttons", () => {
     render(<Navbar />);
 
-    expect(screen.getByText("DILLINGER")).toBeInTheDocument();
+    expect(screen.getByText("DILLINGER DESKTOP")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Export document" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /preview/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Open settings" })).toBeInTheDocument();

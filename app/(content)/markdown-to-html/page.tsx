@@ -14,7 +14,7 @@ const CONVERSIONS = [
     markdown: "## Getting Started",
     html: '<h2 id="getting-started">Getting Started</h2>',
     description:
-      "Each # level maps to a corresponding <h1> through <h6> tag. Dillinger also generates slugged id attributes so your headings double as anchor targets.",
+      "Each # level maps to a corresponding <h1> through <h6> tag. Dillinger Desktop also generates slugged id attributes so your headings double as anchor targets.",
   },
   {
     title: "Lists",
@@ -49,14 +49,14 @@ const CONVERSIONS = [
 
 const FAQ = [
   {
-    question: "How do I convert Markdown to HTML with Dillinger?",
+    question: "How do I convert Markdown to HTML with Dillinger Desktop?",
     answer:
-      "Open the editor, paste or type your Markdown on the left, and Dillinger renders the HTML preview on the right in real time. To get the raw HTML, use the export menu to download an .html file or copy the rendered markup directly.",
+      "Open the editor, paste or type your Markdown on the left, and Dillinger Desktop renders the HTML preview on the right in real time. To get the raw HTML, use the export menu to download an .html file or copy the rendered markup directly.",
   },
   {
     question: "Is the Markdown to HTML conversion free?",
     answer:
-      "Yes. Dillinger is completely free and requires no account or signup. The conversion runs in your browser, so you can convert as many documents as you like without limits.",
+      "Yes. Dillinger Desktop is completely free and requires no account or signup. The conversion runs in your browser, so you can convert as many documents as you like without limits.",
   },
   {
     question: "What Markdown elements get converted to HTML?",
@@ -66,7 +66,7 @@ const FAQ = [
   {
     question: "Is the generated HTML clean and safe?",
     answer:
-      "The output is standards-compliant HTML produced by markdown-it. Dillinger sanitizes rendered HTML with DOMPurify before displaying the preview, so the markup you copy is clean and free of injected scripts.",
+      "The output is standards-compliant HTML produced by markdown-it. Dillinger Desktop sanitizes rendered HTML with DOMPurify before displaying the preview, so the markup you copy is clean and free of injected scripts.",
   },
   {
     question: "Can I copy or export the HTML?",
@@ -104,7 +104,7 @@ export default function MarkdownToHtmlPage() {
       <h1 className="text-4xl font-bold mb-4">Markdown to HTML Converter</h1>
       <p className="text-text-muted text-lg mb-4 max-w-2xl">
         Turn Markdown into clean, valid HTML in seconds. Paste your Markdown
-        into Dillinger and watch the HTML render live — then copy it or export a
+        into Dillinger Desktop and watch the HTML render live — then copy it or export a
         standalone file. Free, no signup, and it runs right in your browser.
       </p>
       <Link
@@ -121,7 +121,7 @@ export default function MarkdownToHtmlPage() {
             Markdown is a plain-text writing format, but browsers, email clients,
             and most publishing platforms speak HTML. A converter bridges the
             two: you write in the simple, readable Markdown syntax, and the tool
-            produces the structured HTML tags the web actually renders. Dillinger
+            produces the structured HTML tags the web actually renders. Dillinger Desktop
             uses the battle-tested markdown-it parser, the same engine trusted by
             countless documentation sites, to produce HTML that follows the
             CommonMark and GitHub-flavored Markdown specifications.
@@ -177,7 +177,7 @@ export default function MarkdownToHtmlPage() {
           </p>
           <p className="text-text-muted mb-4">
             You can also keep working in the original Markdown and re-export at
-            any time — Dillinger never locks your content into a proprietary
+            any time — Dillinger Desktop never locks your content into a proprietary
             format. The Markdown source is always yours to download.
           </p>
         </section>
@@ -188,7 +188,7 @@ export default function MarkdownToHtmlPage() {
             There is nothing to install and no account to create. The conversion
             happens entirely in your browser, which means your draft stays on
             your machine. That
-            makes Dillinger a good fit for sensitive notes, internal docs, and
+            makes Dillinger Desktop a good fit for sensitive notes, internal docs, and
             anything you would rather not upload to a third-party server just to
             see some HTML.
           </p>
@@ -202,7 +202,7 @@ export default function MarkdownToHtmlPage() {
       <div className="mt-16 pt-8 border-t border-border-light">
         <h2 className="text-2xl font-bold mb-3">Convert your Markdown now</h2>
         <p className="text-text-muted mb-6">
-          Paste any Markdown into Dillinger and the HTML appears instantly. Copy
+          Paste any Markdown into Dillinger Desktop and the HTML appears instantly. Copy
           it, export it, or keep editing — all in one place.
         </p>
         <div className="flex gap-4">

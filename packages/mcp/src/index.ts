@@ -38,7 +38,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "render_markdown",
       description:
-        "Render markdown to HTML using Dillinger's full plugin pipeline (KaTeX math, footnotes, syntax highlighting, tables, task lists, and more)",
+        "Render markdown to HTML using Dillinger Desktop's full plugin pipeline (KaTeX math, footnotes, syntax highlighting, tables, task lists, and more)",
       inputSchema: {
         type: "object" as const,
         properties: {

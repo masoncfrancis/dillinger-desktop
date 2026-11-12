@@ -1,6 +1,6 @@
 # @dillinger/cli
 
-Command-line interface for Dillinger markdown editor.
+Command-line interface for Dillinger Desktop markdown editor.
 
 ## Install
 

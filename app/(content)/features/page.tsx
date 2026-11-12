@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Explore Dillinger's features: a Monaco-powered local editor, live preview, native file saving, PDF export, and focused writing tools.",
+    "Explore Dillinger Desktop's features: a Monaco-powered local editor, live preview, native file saving, PDF export, and focused writing tools.",
   alternates: { canonical: "https://dillinger.io/features" },
 };
 
@@ -42,7 +42,7 @@ const FEATURES = [
   {
     title: "Drag and Drop",
     description:
-      "Drop markdown, HTML, or image files directly into the editor. Dillinger handles the conversion automatically.",
+      "Drop markdown, HTML, or image files directly into the editor. Dillinger Desktop handles the conversion automatically.",
   },
   {
     title: "Dark Mode",
@@ -57,7 +57,7 @@ const FEATURES = [
   {
     title: "AI-Ready Formatting",
     description:
-      "Markdown is the native language of large language models. Write in Dillinger, then feed your content directly to ChatGPT, Claude, or any LLM.",
+      "Markdown is the native language of large language models. Write in Dillinger Desktop, then feed your content directly to ChatGPT, Claude, or any LLM.",
   },
 ];
 

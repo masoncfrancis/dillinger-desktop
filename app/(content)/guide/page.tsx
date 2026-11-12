@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Markdown Guide",
   description:
-    "Complete markdown syntax guide and cheat sheet. Learn headings, lists, links, images, code blocks, tables, and more with live examples in Dillinger.",
+    "Complete markdown syntax guide and cheat sheet. Learn headings, lists, links, images, code blocks, tables, and more with live examples in Dillinger Desktop.",
   alternates: { canonical: "https://dillinger.io/guide" },
 };
 
@@ -95,7 +95,7 @@ const SECTIONS = [
     title: "Math (KaTeX)",
     syntax: "Inline: $E = mc^2$\\n\\nBlock:\\n$$\\n\\\\sum_{i=1}^{n} i\\n$$",
     description:
-      "Dillinger supports KaTeX math rendering. Use single dollars for inline, double for block equations.",
+      "Dillinger Desktop supports KaTeX math rendering. Use single dollars for inline, double for block equations.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function GuidePage() {
       <h1 className="text-4xl font-bold mb-4">Markdown Guide</h1>
       <p className="text-text-muted text-lg mb-4 max-w-2xl">
         A complete reference for markdown syntax. Every example works in
-        Dillinger — open the editor and try them.
+        Dillinger Desktop — open the editor and try them.
       </p>
       <Link
         href="/"
@@ -129,7 +129,7 @@ export default function GuidePage() {
       <div className="mt-16 pt-8 border-t border-border-light">
         <h2 className="text-2xl font-bold mb-3">Try it live</h2>
         <p className="text-text-muted mb-6">
-          Dillinger renders all of these formats in real time. Paste any example
+          Dillinger Desktop renders all of these formats in real time. Paste any example
           into the editor and see the preview instantly.
         </p>
         <div className="flex gap-4">

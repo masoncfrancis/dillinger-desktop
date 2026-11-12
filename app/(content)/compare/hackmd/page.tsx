@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Dillinger vs HackMD",
+  title: "Dillinger Desktop vs HackMD",
   description:
-    "Compare Dillinger and HackMD: features, collaboration, pricing, and use cases. Dillinger focuses on individual productivity, HackMD on real-time collaboration.",
+    "Compare Dillinger Desktop and HackMD: features, collaboration, pricing, and use cases. Dillinger Desktop focuses on individual productivity, HackMD on real-time collaboration.",
   alternates: { canonical: "https://dillinger.io/compare/hackmd" },
 };
 
@@ -31,9 +31,9 @@ export default function HackMDCompare() {
       <p className="text-plum font-medium text-sm uppercase tracking-wider mb-3">
         Comparison
       </p>
-      <h1 className="text-4xl font-bold mb-4">Dillinger vs HackMD</h1>
+      <h1 className="text-4xl font-bold mb-4">Dillinger Desktop vs HackMD</h1>
       <p className="text-text-muted text-lg mb-12 max-w-2xl">
-        HackMD is built for teams and real-time collaboration. Dillinger is
+        HackMD is built for teams and real-time collaboration. Dillinger Desktop is
         built for individuals who want zero-friction markdown editing with
         local file saving and no account required.
       </p>
@@ -44,7 +44,7 @@ export default function HackMDCompare() {
             <tr className="border-b border-border-light">
               <th className="text-left py-3 pr-4 font-semibold">Feature</th>
               <th className="text-left py-3 px-4 font-semibold text-plum">
-                Dillinger
+                Dillinger Desktop
               </th>
               <th className="text-left py-3 pl-4 font-semibold">HackMD</th>
             </tr>
@@ -62,7 +62,7 @@ export default function HackMDCompare() {
       </div>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger</h2>
+        <h2 className="text-2xl font-bold mb-4">When to choose Dillinger Desktop</h2>
         <ul className="space-y-3 text-text-muted">
           <li>You write alone and want zero setup — no account, no login</li>
           <li>You need to sync with Dropbox, Google Drive, or OneDrive</li>
@@ -86,7 +86,7 @@ export default function HackMDCompare() {
           href="/"
           className="inline-block bg-plum text-bg-sidebar px-6 py-3 rounded font-medium hover:opacity-90 transition-opacity"
         >
-          Try Dillinger Free
+          Try Dillinger Desktop Free
         </Link>
         <Link
           href="/compare"
