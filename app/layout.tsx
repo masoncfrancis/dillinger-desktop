@@ -14,48 +14,10 @@ export const metadata: Metadata = {
     template: "%s | Dillinger Desktop",
   },
   description:
-    "A focused desktop Markdown editor with live preview, native file saving, and local exports.",
-  metadataBase: new URL("https://dillinger.io"),
-  openGraph: {
-    title: "Dillinger Desktop - Online Markdown Editor",
-    description:
-      "A focused local Markdown editor with live preview and native file saving.",
-    url: "https://dillinger.io",
-    siteName: "Dillinger Desktop",
-    type: "website",
-    locale: "en_US",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Dillinger Desktop - Online Markdown Editor with live preview",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dillinger Desktop - Online Markdown Editor",
-    description:
-      "Local Markdown editor with live preview and native file saving.",
-    images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://dillinger.io",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
+      "A focused desktop Markdown editor with live preview, native file saving, and local exports.",
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -69,36 +31,6 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              name: "Dillinger Desktop",
-              url: "https://dillinger.io",
-              description:
-                "Focused desktop markdown editor with live preview and local file saving.",
-              applicationCategory: "DeveloperApplication",
-               operatingSystem: "Windows, macOS, Linux",
-              browserRequirements: "Requires JavaScript",
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-              },
-              featureList: [
-                "Live markdown preview",
-                "Native file open and save",
-                "Local auto-save",
-                "PDF export",
-                "Vim and Emacs keybindings",
-                "Zen mode",
-                "Dark mode",
-              ],
-            }),
-          }}
-        />
       </body>
     </html>
   );

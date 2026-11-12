@@ -1,299 +1,73 @@
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/885053fb-b002-4168-98f5-56e583829983" alt="Dillinger Desktop Banner" width="100%" />
-</p>
+# Dillinger Desktop
 
-<h1 align="center">Dillinger Desktop</h1>
+Focused local Markdown editor with live preview, native file operations, and
+Markdown, HTML, and PDF export.
 
-<p align="center">
-  <strong>The last Markdown editor you'll ever need.</strong>
-</p>
+## Requirements
 
-<p align="center">
-  A modern, cloud-native Markdown editor built on Next.js — designed for speed, focus, and seamless sync.
-</p>
+- Node.js 24+
+- npm
 
-<p align="center">
-  <a href="#quick-start"><strong>Get Started</strong></a> ·
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#cloud-integrations"><strong>Integrations</strong></a> ·
-  <a href="#deployment"><strong>Deploy</strong></a>
-</p>
+## Development
 
----
-
-## ✨ Why Dillinger Desktop
-
-Most markdown editors are either:
-- bloated  
-- offline-only  
-- or lack serious developer ergonomics  
-
-**Dillinger Desktop fixes that.**
-
-It combines:
-- ⚡ VS Code-grade editing  
-- ☁️ Native cloud storage  
-- 🧘 Distraction-free UX  
-- 🔄 Real-time rendering  
-
----
-
-## ⚡ Quick Start
+Install dependencies and run the web renderer:
 
 ```bash
 npm install
 npm run dev
-````
+```
 
-Open → [http://localhost:3000](http://localhost:3000)
-
-### Desktop Development
-
-The Electron shell runs the same editor in a native desktop window:
+Run the Electron shell with its local Next.js server:
 
 ```bash
 npm run electron:dev
 ```
 
-Create an installer for current host platform with:
+## Packaging
 
 ```bash
-npm run electron:package
+npm run electron:package       # Current platform
+npm run electron:package:win  # Windows NSIS installer
+npm run electron:package:mac  # macOS DMG and ZIP
+npm run electron:package:linux # Linux AppImage and DEB
 ```
 
-Build a specific platform explicitly:
+Artifacts are written to `release/`. Production macOS distribution requires
+Apple signing and notarization credentials.
+
+## Features
+
+- Monaco editor with Markdown syntax highlighting
+- Live preview with scroll sync
+- Native Open, Save, and Save As dialogs
+- Local document persistence and auto-save
+- Markdown, styled HTML, and PDF export
+- Image paste support
+- Zen mode and keyboard shortcuts
+
+## Scripts
 
 ```bash
-npm run electron:package:win
-npm run electron:package:mac
-npm run electron:package:linux
+npm run build       # Next.js production build
+npm run lint        # ESLint
+npm run typecheck   # TypeScript
+npm run test:unit   # Vitest tests
+npm run test:e2e    # Playwright tests
+npm run verify      # Lint, typecheck, unit, and E2E tests
 ```
 
-Artifacts are written to `release/`. macOS builds currently produce DMG and
-ZIP files. Linux builds produce AppImage and DEB files. Production macOS
-distribution still requires Apple signing and notarization credentials.
-
-The desktop shell provides secure native Open, Save, and Save As dialogs for
-Markdown, text, and HTML files. Cloud integrations continue to use the
-existing web API during this transition.
-
----
-
-## 🧱 Requirements
-
-* Node.js 24+
-* npm / yarn / pnpm / bun
-
----
-
-## 🚀 Features
-
-### Editor Experience
-
-* Monaco Editor (VS Code core)
-* Syntax highlighting for Markdown
-* Image paste support
-
-### Live Workflow
-
-* Real-time preview
-* Scroll sync
-* Instant feedback loop
-
-### Focus Mode
-
-* Zen Mode (`Cmd/Ctrl + Shift + Z`)
-* Fullscreen, distraction-free writing
-
-### File Handling
-
-* Drag & drop `.md`, `.txt`, `.markdown`
-* Auto-save (local persistence)
-
-### Export
-
-* Markdown
-* HTML
-* PDF
-
-### Cloud Integrations
-
-* GitHub
-* Google Drive
-* Dropbox
-* OneDrive
-* Bitbucket
-
----
-
-## 🔐 Environment Setup
-
-Create:
-
-```bash
-.env.local
-```
-
-### Template
-
-```bash
-# Google Drive
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GOOGLE_REDIRECT_URI=http://localhost:3000/api/google-drive/callback
-
-# OneDrive
-ONEDRIVE_CLIENT_ID=
-ONEDRIVE_CLIENT_SECRET=
-ONEDRIVE_REDIRECT_URI=http://localhost:3000/api/onedrive/callback
-
-# Bitbucket
-BITBUCKET_CLIENT_ID=
-BITBUCKET_CLIENT_SECRET=
-BITBUCKET_REDIRECT_URI=http://localhost:3000/api/bitbucket/callback
-
-# GitHub
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
-GITHUB_REDIRECT_URI=http://localhost:3000/api/github/callback
-
-# Dropbox
-DROPBOX_CLIENT_ID=
-DROPBOX_CLIENT_SECRET=
-DROPBOX_REDIRECT_URI=http://localhost:3000/api/dropbox/callback
-```
-
----
-
-## ☁️ Cloud Integrations
-
-Each provider requires OAuth configuration.
-
-### Google Drive
-
-* Enable Drive API
-* Create OAuth credentials
-* Redirect:
-
-```
-/api/google-drive/callback
-```
-
-### OneDrive
-
-* Azure App Registration
-* Permissions:
-
-  * Files.ReadWrite
-  * User.Read
-
-### Bitbucket
-
-* OAuth consumer
-* Repo read/write access
-
-### GitHub
-
-* OAuth App
-* Callback:
-
-```
-/api/github/callback
-```
-
-### Dropbox
-
-* Scoped app
-* Enable:
-
-  * files.metadata.read
-  * files.content.write
-
----
-
-## 🚢 Deployment
-
-Update all OAuth callbacks:
-
-```bash
-https://yourdomain.com/api/{provider}/callback
-```
-
-Then:
-
-```bash
-npm run build
-npm start
-```
-
----
-
-## 🏗 Tech Stack
-
-| Layer     | Technology   |
-| --------- | ------------ |
-| Framework | Next.js 14   |
-| Editor    | Monaco       |
-| Styling   | Tailwind CSS |
-| State     | Zustand      |
-| Icons     | Lucide       |
-
----
-
-## 📦 Scripts
-
-```bash
-npm run dev              # Start dev server
-npm run electron:dev     # Start the Electron development shell
-npm run build            # Production build
-npm run electron:package       # Build installer for current host platform
-npm run electron:package:win   # Build Windows NSIS installer
-npm run electron:package:mac   # Build macOS DMG and ZIP
-npm run electron:package:linux # Build Linux AppImage and DEB
-npm start                # Start production server
-npm run lint             # ESLint
-npm run test             # Unit + E2E tests
-npm run test:unit        # Vitest unit/integration tests
-npm run test:watch       # Vitest watch mode
-npm run test:e2e         # Playwright E2E tests
-npm run test:e2e:headed  # E2E in visible browser
-npm run verify           # Lint + typecheck + all tests
-```
-
----
-
-## 🧪 Testing
-
-294 unit/integration tests (Vitest) + 39 E2E tests (Playwright) with 98% code coverage.
-
-```bash
-npm run test:unit                # Run all unit tests
-npx vitest run --coverage        # With coverage report
-npm run test:e2e:headed          # E2E in visible browser
-```
-
-Tests live in `tests/` organized by type: `lib/`, `store/`, `hooks/`, `components/`, `routes/`, and `e2e/`.
-
----
-
-## 🧭 Philosophy
-
-Dillinger Desktop is built around a simple idea:
-
-> Writing tools should disappear.
-
-No friction.
-No clutter.
-Just flow.
-
----
-
-## 🤝 Contributing
-
-PRs welcome. Open an issue first for major changes.
-
----
-
-## 📄 License
+Tests live in `tests/`, organized by library, store, hook, component, route,
+and end-to-end coverage.
+
+## Tech stack
+
+- Next.js 16
+- Electron
+- Monaco
+- Tailwind CSS
+- Zustand
+- Lucide
+
+## License
 
 MIT
