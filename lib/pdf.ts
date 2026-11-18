@@ -51,10 +51,10 @@ async function resolveChromeExecutablePath() {
   );
 }
 
-function getLaunchOptions(executablePath: string) {
+async function getLaunchOptions(executablePath: string) {
   if (isServerlessRuntime()) {
     return {
-      args: puppeteer.defaultArgs({
+      args: await puppeteer.defaultArgs({
         args: chromium.args,
         headless: "shell",
       }),
@@ -86,7 +86,7 @@ export async function renderPdfBuffer({
   });
 
   const executablePath = await resolveChromeExecutablePath();
-  const browser = await puppeteer.launch(getLaunchOptions(executablePath));
+  const browser = await puppeteer.launch(await getLaunchOptions(executablePath));
 
   try {
     const page = await browser.newPage();
