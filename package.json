@@ -65,7 +65,7 @@
     "markdown-it-toc": "^1.1.0",
     "monaco-vim": "^0.4.4",
     "next": "^16.4.6",
-    "postcss": "^8",
+    "postcss": "^8.5.33",
     "puppeteer-core": "^25.18.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
