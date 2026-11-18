@@ -53,7 +53,17 @@ describe("DocumentTitle", () => {
     seedDocument();
     render(<DocumentTitle />);
 
-    expect(screen.getByText("My Document.md")).toBeVisible();
+    const title = screen.getByText("My Document.md");
+    const editButton = screen.getByRole("button", { name: "Edit title" });
+    const status = screen.getByText("Not saved");
+
+    expect(title).toBeVisible();
+    expect(title.className).toContain("min-w-0");
+    expect(title.className).not.toContain("flex-1");
+    expect(editButton.className).toContain("shrink-0");
+    expect(title.parentElement?.children[0]).toBe(title);
+    expect(title.parentElement?.children[1]).toBe(editButton);
+    expect(title.parentElement?.children[2]).toBe(status);
   });
 
   it("renders nothing when there is no current document", () => {
@@ -80,7 +90,24 @@ describe("DocumentTitle", () => {
     seedDocument(createDocument({ filePath: "/tmp/document.md" }));
     render(<DocumentTitle />);
 
-    expect(screen.getByText("Saved")).toBeVisible();
+    const status = screen.getByText("Saved");
+    expect(status).toBeVisible();
+    expect(status.className).toContain("text-text-muted opacity-50");
+  });
+
+  it("uses saved styling for an unsaved document with a file path", () => {
+    const document = createDocument({ filePath: "/tmp/document.md", isDirty: true });
+    useStore.setState({
+      documents: [document],
+      currentDocument: document,
+      isDirty: true,
+    });
+    render(<DocumentTitle />);
+
+    const status = screen.getByText("Changes Not Yet Saved");
+    expect(status).toBeVisible();
+    expect(status.className).toContain("text-text-muted opacity-50");
+    expect(status.className).not.toContain("text-plum");
   });
 
   it("enters edit mode when the edit button is clicked", async () => {

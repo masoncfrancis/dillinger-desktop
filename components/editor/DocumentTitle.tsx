@@ -14,7 +14,11 @@ export function DocumentTitle() {
   const [title, setTitle] = useState("");
   const documentTitle = currentDocument?.title || DEFAULT_DOCUMENT_TITLE;
   const isUntitled = !currentDocument?.filePath;
-  const statusLabel = isUntitled ? "Not saved" : isDirty ? "Unsaved" : "Saved";
+  const statusLabel = isUntitled
+    ? "Not saved"
+    : isDirty
+      ? "Changes Not Yet Saved"
+      : "Saved";
 
   useEffect(() => {
     setTitle(currentDocument?.title || "");
@@ -81,30 +85,28 @@ export function DocumentTitle() {
         </div>
       ) : (
         <div className="flex items-center gap-2 flex-1">
-          <h2 className="text-text-primary font-semibold text-base truncate">
+          <h2 className="min-w-0 text-text-primary font-semibold text-base truncate">
             {currentDocument.title || DEFAULT_DOCUMENT_TITLE}
           </h2>
-          <span
-            aria-live="polite"
-            className={`ml-2 rounded-full border px-2 py-0.5 text-xs font-medium transition-colors duration-200 ${
-              isUntitled
-                ? "border-amber-300 bg-amber-100 text-amber-800"
-                : isDirty
-                  ? "border-plum/30 bg-plum/10 text-plum"
-                  : "border-transparent text-text-muted opacity-50"
-            }`}
-          >
-            {statusLabel}
-          </span>
           <button
             onClick={() => setIsEditing(true)}
             aria-label="Edit title"
             title="Rename document"
-            className="text-text-muted hover:text-plum transition-colors rounded
+            className="shrink-0 text-text-muted hover:text-plum transition-colors rounded
                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum"
           >
             <Edit2 size={16} />
           </button>
+          <span
+            aria-live="polite"
+            className={`shrink-0 rounded-full border px-2 py-0.5 text-xs font-medium transition-colors duration-200 ${
+              isUntitled
+                ? "border-amber-300 bg-amber-100 text-amber-800"
+                : "border-transparent text-text-muted opacity-50"
+            }`}
+          >
+            {statusLabel}
+          </span>
         </div>
       )}
     </div>
